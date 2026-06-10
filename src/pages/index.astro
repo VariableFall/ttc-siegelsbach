@@ -4,20 +4,13 @@ import SeitenTitel from '../components/SeitenTitel.astro';
 import Karte from '../components/Karte.astro';
 import SpielListe from '../components/SpielListe.astro';
 import Hinweis from '../components/Hinweis.astro';
-import spielplan from '../../public/data/spielplan.json';
-import {
-  formatStand,
-  letzteErgebnisse,
-  naechsteSpiele,
-  type DatenDatei,
-  type MannschaftSpielplan,
-} from '../lib/spieldaten';
+import { spielplan } from '../data/index';
+import { formatStand, letzteErgebnisse, naechsteSpiele } from '../lib/spieldaten';
 
 const currentPath = Astro.url.pathname;
-const spielplanDaten = spielplan as DatenDatei<MannschaftSpielplan>;
 
-const kommende = naechsteSpiele(spielplanDaten, 5);
-const ergebnisse = letzteErgebnisse(spielplanDaten, 5);
+const kommende = naechsteSpiele(spielplan, 3);
+const ergebnisse = letzteErgebnisse(spielplan, 3);
 ---
 
 <Base title="Start" currentPath={currentPath}>
@@ -27,7 +20,7 @@ const ergebnisse = letzteErgebnisse(spielplanDaten, 5);
     hero
   />
 
-  {spielplanDaten.demo && (
+  {spielplan.demo && (
     <Hinweis variant="demo">
       Beispieldaten – Saison 26/27 startet im September
     </Hinweis>
@@ -50,8 +43,8 @@ const ergebnisse = letzteErgebnisse(spielplanDaten, 5);
       </Karte>
     </div>
     <p class="daten-stand">
-      Stand: {formatStand(spielplanDaten.stand)}
-      {spielplanDaten.demo ? ' (Beispieldaten)' : ''}
+      Stand: {formatStand(spielplan.stand)}
+      {spielplan.demo ? ' (Beispieldaten)' : ''}
       · <a href="/mannschaften/">Alle Mannschaften →</a>
     </p>
   </section>

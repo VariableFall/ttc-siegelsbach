@@ -1,11 +1,12 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-// GitHub Pages: Repo-Name als base setzen (bei Umbenennung hier anpassen)
+// GitHub Pages: User/Org + Repo-Name (Projektseite unter username.github.io/repo/)
+const GITHUB_USER = 'VariableFall';
 const REPO = 'ttc-siegelsbach';
 
 export default defineConfig({
   output: 'static',
-  site: `https://${REPO}.github.io`,
+  site: `https://${GITHUB_USER}.github.io`,
   base: `/${REPO}`,
 });

@@ -619,6 +619,19 @@ main {
   background: rgba(0, 0, 0, 0.02);
 }
 
+.tabelle__zeile--eigen {
+  background: rgba(200, 16, 46, 0.04);
+}
+
+.tabelle__zeile--eigen td {
+  font-weight: 600;
+  color: var(--tinte);
+}
+
+.tabelle__zeile--eigen td:first-child {
+  box-shadow: inset var(--belag-hoehe) 0 0 0 var(--akzent);
+}
+
 .tabelle__stand {
   font-size: var(--text-xs);
   color: var(--grau-leicht);
@@ -1143,6 +1156,63 @@ main {
 
 .mannschafts-block__link a {
   font-weight: 500;
+}
+
+/* ── Spielplan-Tabelle ─────────────────────────────────────── */
+
+.spielplan-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm), var(--shadow-inset);
+  background: var(--weiss);
+}
+
+.spielplan {
+  width: 100%;
+  min-width: 20rem;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+.spielplan th,
+.spielplan td {
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  border-bottom: 1px solid var(--linie);
+}
+
+.spielplan th {
+  font-weight: 500;
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--grau-leicht);
+  background: var(--papier);
+  white-space: nowrap;
+}
+
+.spielplan tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.spielplan__datum {
+  white-space: nowrap;
+  color: var(--grau);
+  font-size: var(--text-xs);
+}
+
+.spielplan__ergebnis {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  color: var(--tinte);
+  white-space: nowrap;
+}
+
+.spielplan__zeile--ausstehend .spielplan__ergebnis {
+  font-weight: 400;
+  color: var(--grau-leicht);
 }
 
 .zurueck-link {

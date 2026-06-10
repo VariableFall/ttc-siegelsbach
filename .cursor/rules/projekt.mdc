@@ -1,3 +1,128 @@
 ---
 alwaysApply: true
 ---
+# TTC Siegelsbach – Vereinswebsite (Projekt-Regeln)
+
+> Ablage: `.cursor/rules/projekt.mdc` mit Frontmatter `alwaysApply: true`,
+> alternativ als `AGENTS.md` ins Repo-Root.
+
+## Projekt
+
+Statische Vereinswebsite für den TTC Siegelsbach (gegründet 1968), einen
+Tischtennisverein im BATTV (Badischer Tischtennis-Verband, Bezirk Sinsheim).
+Der Verein hat eine Abteilung Volleyball, die eine eigene Unterseite unter
+`/volleyball/` bekommt. 3 gemeldete Erwachsenen-Mannschaften (Ligen für
+Saison 26/27 voraussichtlich Kreisliga, Kreisklasse A, Kreisklasse D –
+endgültige Meldung im Juli 2026).
+
+Stammdaten für click-TT/mytischtennis (verifiziert):
+- Verband-Slug: `BaTTV` (eigener Verband in click-TT, NICHT TTBW)
+- Saison-Format: `25--26` (Doppel-Bindestrich), ab Juli 2026: `26--27`
+- vereinsId: `927`, Vereins-Slug: `TTC_Siegelsbach`
+- Vereinsseite: https://www.mytischtennis.de/click-tt/BaTTV/25--26/verein/927/TTC_Siegelsbach/mannschaften
+  (daneben: /spielplan, /meldungen, /bilanzen/gesamt, /info)
+
+Zielgruppe: Mitglieder, Eltern, Interessenten aus Siegelsbach und Umgebung.
+Die meisten Besucher kommen mobil. Sprache der Inhalte: Deutsch.
+
+## Stack & Hosting
+
+- Astro (aktuelle Version), reiner statischer Output (`output: 'static'`)
+- Kein UI-Framework (kein React/Vue), kein Tailwind – plain CSS mit Custom
+  Properties in `src/styles/global.css`
+- Hosting: GitHub Pages über GitHub Actions (offizieller Astro-Deploy-Workflow)
+- `site` und `base` in `astro.config.mjs` korrekt für GitHub Pages setzen
+
+## Verzeichnisstruktur
+
+```
+src/
+  layouts/Base.astro        # HTML-Gerüst, Header, Nav, Footer
+  components/               # Karten, Tabelle, Spielplan, Hero ...
+  pages/
+    index.astro             # Start
+    ueber-uns.astro
+    training.astro
+    mannschaften.astro
+    anfahrt.astro
+    impressum.astro
+    datenschutz.astro
+    volleyball/index.astro   # Abteilungs-Unterseite
+  styles/global.css
+public/data/                 # JSON-Daten (siehe Daten-Regeln)
+pipeline/                    # Fetch-Script + config.json (Node)
+.github/workflows/
+  deploy.yml                 # Build & Deploy
+  daten.yml                  # Cron: Daten von mytischtennis holen
+```
+
+## Daten-Regeln (wichtig)
+
+- Mannschafts-, Tabellen- und Spielplandaten kommen AUSSCHLIESSLICH aus
+  `public/data/*.json`. NIEMALS Live-Fetch im Browser gegen mytischtennis.de
+  (CORS, Stabilität, Datenschutz).
+- **Datenfluss Build-Zeit:** `pipeline/*.mjs` schreibt nach `public/data/`
+  → `src/data/index.ts` importiert die JSONs dort zur Build-Zeit
+  → Seiten/Komponenten importieren nur aus `src/data/index.ts`.
+  Die JSONs liegen zusätzlich in `public/` (versioniert, von der Pipeline
+  aktualisiert); die UI liest sie nicht direkt von dort.
+- Die JSON-Dateien werden von `pipeline/fetch.mjs` erzeugt, das die
+  inoffiziellen JSON-Endpunkte von mytischtennis.de/click-tt abruft
+  (Doku: https://notmycupofteetee.github.io/mytt-api/, Verband: BaTTV).
+- Welche Ligen abgerufen werden, steht in `pipeline/config.json`
+  (eine Eintragung pro Mannschaft: Name, Liga-Slug, groupId). Diese Datei
+  ist die EINZIGE Stelle, die bei Saisonwechsel angepasst wird.
+- Jede JSON-Datei trägt ein Feld `stand` (ISO-Timestamp) und
+  `quelle`. Die UI zeigt "Stand: TT.MM.JJJJ" unter jeder Tabelle.
+- Bis zur Vereinsmeldung im Juli 2026 enthalten die JSONs Beispieldaten mit
+  `"demo": true`; die UI blendet dann einen dezenten Hinweis
+  "Beispieldaten – Saison 26/27 startet im September" ein.
+- Fetch-Script defensiv bauen: bei Fehlern alte JSONs NICHT überschreiben,
+  Exit-Code != 0, damit der Action-Run sichtbar fehlschlägt.
+- **Deploy nach Daten-Update:** `daten.yml` committet geänderte JSONs und
+  pusht auf `main`. `deploy.yml` reagiert auf `push` und zusätzlich auf
+  erfolgreichen Abschluss von „Daten aktualisieren“ (`workflow_run`), damit
+  die Website mit den neuen Daten neu gebaut wird.
+
+## Design
+
+- Modern, simpel, übersichtlich. Mobile-first. Viel Weißraum.
+- Farben (CSS Custom Properties, keine Hex-Werte im Komponenten-CSS):
+  - `--rot: #C8102E`        (Vereinsrot, angelehnt an Belag-Rot)
+  - `--rot-dunkel: #9B0C23` (Hover, aktive Zustände)
+  - `--tinte: #1A1A1E`      (Text, fast schwarz)
+  - `--grau: #5C5C66`       (Sekundärtext)
+  - `--papier: #FAFAF8`     (Hintergrund)
+  - `--linie: #E4E4E0`      (Trennlinien, Tabellenränder)
+- Volleyball-Unterseite: gleiches Layout, aber eigener Akzent
+  `--akzent-vb: #1D4ED8` statt Rot, damit die Abteilung erkennbar ist.
+- Typografie: Display-Schrift "Archivo" (Expanded/Black für Headlines),
+  Fließtext "Inter". Beide self-hosted via @fontsource (kein Google-Fonts-CDN
+  → Datenschutz). Headlines dürfen Charakter haben (eng gesetzt, groß),
+  Fließtext bleibt ruhig.
+- Signatur-Element: ein flacher roter "Belag-Balken" als wiederkehrendes
+  Motiv – als Unterstreichung der aktiven Navigation, als Kante an Karten
+  und als Hero-Element. Sonst KEINE Deko, keine Schatten-Orgien, keine
+  Gradients, maximal dezente Hover-Transitions.
+- Es gibt kein Logo: die Wortmarke "TTC Siegelsbach" in Archivo Black ist
+  das Logo (Header links, "TTC" in Rot).
+- Barrierefreiheit: sichtbarer Fokus-Ring, Kontrast AA, `prefers-reduced-motion`
+  respektieren, semantisches HTML (nav, main, table mit th/scope).
+
+## Inhalts- und Rechtsregeln
+
+- Keine Tracking-Scripts, keine externen CDNs, keine Cookies → kein
+  Cookie-Banner nötig.
+- Karte auf der Anfahrtsseite: OpenStreetMap-Einbettung oder statisches
+  Kartenbild mit Link, KEIN Google Maps iframe.
+- Impressum und Datenschutz sind Pflichtseiten und stehen im Footer.
+- Personennamen (Vorstand, Trainer) nur als Platzhalter `[NAME]` anlegen,
+  bis sie ausdrücklich freigegeben werden.
+
+## Arbeitsweise
+
+- Kleine, abgeschlossene Schritte; nach jedem Schritt muss `npm run build`
+  fehlerfrei durchlaufen.
+- Keine zusätzlichen Dependencies ohne Begründung.
+- Bestehende Komponenten wiederverwenden statt duplizieren.
+- Commits auf Deutsch, prägnant (z.B. "Tabellen-Komponente + Demo-Daten").

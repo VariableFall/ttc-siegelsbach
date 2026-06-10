@@ -5,7 +5,7 @@ export interface Spalte {
 }
 
 export interface Zeile {
-  [key: string]: string | number;
+  [key: string]: string | number | boolean | undefined;
 }
 
 interface Props {
@@ -37,7 +37,7 @@ const showScrollHint = scrollHinweis && spalten.length > 3;
       </thead>
       <tbody>
         {zeilen.map((zeile) => (
-          <tr>
+          <tr class:list={[{ 'tabelle__zeile--eigen': zeile.eigenesTeam }]}>
             {spalten.map((spalte) => (
               <td>{zeile[spalte.key] ?? '–'}</td>
             ))}

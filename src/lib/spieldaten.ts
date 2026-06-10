@@ -118,5 +118,14 @@ export function tabellenZeilenFuerUi(zeilen: TabellenZeile[]) {
     spiele: z.spiele,
     punkte: z.punkte,
     diff: z.diff,
+    eigenesTeam: z.eigenesTeam,
   }));
+}
+
+export function spieleChronologisch(spiele: Spiel[]): Spiel[] {
+  return [...spiele].sort((a, b) => {
+    const diff = parseDatum(a.datum) - parseDatum(b.datum);
+    if (diff !== 0) return diff;
+    return (a.uhrzeit ?? '').localeCompare(b.uhrzeit ?? '');
+  });
 }

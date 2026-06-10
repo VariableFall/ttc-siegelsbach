@@ -1,0 +1,44 @@
+---
+import type { Spiel } from '../lib/spieldaten';
+import { formatSpielDatum } from '../lib/spieldaten';
+
+interface Props {
+  spiele: Spiel[];
+  leerText?: string;
+}
+
+const { spiele, leerText = 'Noch keine Spiele in dieser Saison.' } = Astro.props;
+---
+
+{spiele.length === 0 ? (
+  <p class="leer-zustand">{leerText}</p>
+) : (
+  <div class="spielplan-wrap">
+    <table class="spielplan">
+      <thead>
+        <tr>
+          <th scope="col">Datum</th>
+          <th scope="col">Heim</th>
+          <th scope="col">Ergebnis</th>
+          <th scope="col">Gast</th>
+        </tr>
+      </thead>
+      <tbody>
+        {spiele.map((spiel) => (
+          <tr class:list={[{ 'spielplan__zeile--ausstehend': spiel.status === 'scheduled' }]}>
+            <td class="spielplan__datum">
+              <time datetime={spiel.datum ?? undefined}>
+                {formatSpielDatum(spiel.datum, spiel.uhrzeit)}
+              </time>
+            </td>
+            <td>{spiel.heim}</td>
+            <td class="spielplan__ergebnis">
+              {spiel.ergebnis ?? (spiel.status === 'scheduled' ? '–' : '…')}
+            </td>
+            <td>{spiel.gast}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+)}

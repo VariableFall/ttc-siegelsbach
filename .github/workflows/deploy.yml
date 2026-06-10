@@ -4,6 +4,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Rebuild nach Daten-Update (daten.yml pusht JSON-Änderungen auf main)
+  workflow_run:
+    workflows: ['Daten aktualisieren']
+    types: [completed]
+    branches: [main]
 
 permissions:
   contents: read
@@ -17,6 +22,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: >-
+      github.event_name != 'workflow_run' ||
+      github.event.workflow_run.conclusion == 'success'
     steps:
       - name: Checkout
         uses: actions/checkout@v4

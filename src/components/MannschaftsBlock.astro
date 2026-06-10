@@ -1,8 +1,9 @@
 ---
 import Tabelle from './Tabelle.astro';
+import Spielplan from './Spielplan.astro';
 import Hinweis from './Hinweis.astro';
 import type { MannschaftSpielplan, MannschaftTabellen } from '../lib/spieldaten';
-import { formatSpielDatum, tabellenZeilenFuerUi } from '../lib/spieldaten';
+import { spieleChronologisch, tabellenZeilenFuerUi } from '../lib/spieldaten';
 
 interface Props {
   mannschaftTabellen: MannschaftTabellen;
@@ -21,24 +22,7 @@ const tabelleSpalten = [
   { key: 'diff', label: 'Diff.' },
 ];
 
-const heute = new Date();
-heute.setHours(0, 0, 0, 0);
-
-function parseDatum(datum: string | null) {
-  if (!datum) return 0;
-  const t = new Date(`${datum}T00:00:00`).getTime();
-  return Number.isNaN(t) ? 0 : t;
-}
-
-const kommende = mannschaftSpielplan.spiele
-  .filter((s) => s.status === 'scheduled' && parseDatum(s.datum) >= heute.getTime())
-  .sort((a, b) => parseDatum(a.datum) - parseDatum(b.datum))
-  .slice(0, 5);
-
-const ergebnisse = mannschaftSpielplan.spiele
-  .filter((s) => s.status === 'done' && s.ergebnis)
-  .sort((a, b) => parseDatum(b.datum) - parseDatum(a.datum))
-  .slice(0, 5);
+const alleSpiele = spieleChronologisch(mannschaftSpielplan.spiele);
 ---
 
 <section class="mannschafts-block abschnitt" aria-labelledby={`mannschaft-${mannschaftTabellen.name}`}>
@@ -66,33 +50,10 @@ const ergebnisse = mannschaftSpielplan.spiele
     </a>
   </p>
 
-  {kommende.length > 0 && (
-    <div class="mannschafts-block__spiele">
-      <h3 class="mannschafts-block__untertitel">Nächste Spiele</h3>
-      <ul class="spiel-liste spiel-liste--kompakt">
-        {kommende.map((spiel) => (
-          <li class="spiel-liste__eintrag">
-            <time datetime={spiel.datum ?? undefined}>{formatSpielDatum(spiel.datum, spiel.uhrzeit)}</time>
-            <span>{spiel.heim} – {spiel.gast}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  )}
-
-  {ergebnisse.length > 0 && (
-    <div class="mannschafts-block__spiele">
-      <h3 class="mannschafts-block__untertitel">Letzte Ergebnisse</h3>
-      <ul class="spiel-liste spiel-liste--kompakt">
-        {ergebnisse.map((spiel) => (
-          <li class="spiel-liste__eintrag">
-            <time datetime={spiel.datum ?? undefined}>{formatSpielDatum(spiel.datum, spiel.uhrzeit)}</time>
-            <span>{spiel.heim} {spiel.ergebnis} {spiel.gast}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  )}
+  <div class="mannschafts-block__spiele">
+    <h3 class="mannschafts-block__untertitel">Spielplan</h3>
+    <Spielplan spiele={alleSpiele} />
+  </div>
 
   <p class="mannschafts-block__link">
     <a href={mannschaftSpielplan.myttSpielplanUrl} rel="noopener noreferrer">
