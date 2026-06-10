@@ -10,12 +10,6 @@ const { titel, lead, hero = false } = Astro.props;
 
 <header class:list={['seiten-titel', { 'seiten-titel--hero': hero }]}>
   {hero && <span class="belag-balken" aria-hidden="true"></span>}
-  <h1 class="seiten-titel__heading">
-    {hero ? (
-      titel
-    ) : (
-      <span class="belag-balken belag-balken--inline">{titel}</span>
-    )}
-  </h1>
+  <h1 class="seiten-titel__heading">{titel}</h1>
   {lead && <p class="seiten-titel__lead">{lead}</p>}
 </header>

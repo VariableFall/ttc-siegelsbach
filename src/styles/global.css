@@ -477,6 +477,15 @@ main {
   color: var(--tinte);
 }
 
+.seiten-titel:not(.seiten-titel--hero) .seiten-titel__heading::after {
+  content: '';
+  display: block;
+  width: 2.5rem;
+  height: var(--belag-hoehe);
+  background: var(--akzent);
+  margin-top: var(--space-4);
+}
+
 .seiten-titel__lead {
   font-size: var(--text-lg);
   font-weight: 400;
@@ -1145,7 +1154,24 @@ main {
 
 .mannschafts-block__titel {
   font-size: var(--text-2xl);
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+.mannschafts-block__wettbewerb {
+  margin-top: var(--space-10);
+  padding-top: var(--space-10);
+  border-top: 1px solid var(--linie);
+}
+
+.mannschafts-block__wettbewerb:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.mannschafts-block__untertitel {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-4);
 }
 
 .mannschafts-block__liga {
@@ -1158,8 +1184,9 @@ main {
   margin-top: var(--space-2);
 }
 
-.mannschafts-block__untertitel {
-  font-size: var(--text-lg);
+.mannschafts-block__spielplan-titel {
+  font-size: var(--text-base);
+  font-weight: 600;
   margin-bottom: var(--space-4);
 }
 

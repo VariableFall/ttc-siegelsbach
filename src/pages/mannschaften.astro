@@ -3,11 +3,12 @@ import Base from '../layouts/Base.astro';
 import SeitenTitel from '../components/SeitenTitel.astro';
 import MannschaftsBlock from '../components/MannschaftsBlock.astro';
 import { tabellen, spielplan } from '../data/index';
-import { formatStand } from '../lib/spieldaten';
+import { formatStand, mannschaftenGruppiert } from '../lib/spieldaten';
 import { PAGE_DESCRIPTIONS } from '../lib/seo';
 
 const currentPath = Astro.url.pathname;
 const stand = formatStand(tabellen.stand);
+const gruppen = mannschaftenGruppiert(tabellen, spielplan);
 ---
 
 <Base title="Mannschaften" description={PAGE_DESCRIPTIONS.Mannschaften} currentPath={currentPath}>
@@ -16,16 +17,12 @@ const stand = formatStand(tabellen.stand);
     lead="Tabellen und Spielpläne unserer gemeldeten Mannschaften im BATTV."
   />
 
-  {tabellen.mannschaften.map((m) => {
-    const sp = spielplan.mannschaften.find((s) => s.name === m.name);
-    if (!sp) return null;
-    return (
-      <MannschaftsBlock
-        mannschaftTabellen={m}
-        mannschaftSpielplan={sp}
-        demo={tabellen.demo}
-        stand={stand}
-      />
-    );
-  })}
+  {gruppen.map((g) => (
+    <MannschaftsBlock
+      name={g.name}
+      wettbewerbe={g.wettbewerbe}
+      demo={tabellen.demo}
+      stand={stand}
+    />
+  ))}
 </Base>

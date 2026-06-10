@@ -7,23 +7,50 @@
     {
       "name": "I",
       "teamName": "TTC Siegelsbach",
+      "ligaName": "Erwachsene Kreisliga",
+      "leagueSlug": "x",
+      "groupId": "499567",
+      "wettbewerb": "rundenspiel"
+    },
+    {
+      "name": "I",
+      "teamName": "TTC Siegelsbach",
       "ligaName": "Erwachsene C-Pokal",
       "leagueSlug": "x",
-      "groupId": "499641"
+      "groupId": "499641",
+      "wettbewerb": "pokal"
+    },
+    {
+      "name": "II",
+      "teamName": "TTC Siegelsbach II",
+      "ligaName": "Erwachsene Kreisklasse A Nord",
+      "leagueSlug": "x",
+      "groupId": "499557",
+      "wettbewerb": "rundenspiel"
     },
     {
       "name": "II",
       "teamName": "TTC Siegelsbach II",
       "ligaName": "Erwachsene C-Pokal",
       "leagueSlug": "x",
-      "groupId": "499641"
+      "groupId": "499641",
+      "wettbewerb": "pokal"
+    },
+    {
+      "name": "III",
+      "teamName": "TTC Siegelsbach III",
+      "ligaName": "Erwachsene Kreisklasse D Staffel 2 4-er",
+      "leagueSlug": "x",
+      "groupId": "499599",
+      "wettbewerb": "rundenspiel"
     },
     {
       "name": "III",
       "teamName": "TTC Siegelsbach III",
       "ligaName": "Erwachsene D-Pokal",
       "leagueSlug": "x",
-      "groupId": "499647"
+      "groupId": "499647",
+      "wettbewerb": "pokal"
     }
   ]
 }

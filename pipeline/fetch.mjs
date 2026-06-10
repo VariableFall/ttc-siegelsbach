@@ -32,8 +32,11 @@ async function loadConfig() {
   }
 
   for (const m of config.mannschaften) {
-    if (!m.name || !m.ligaName || !m.leagueSlug || !m.groupId) {
+    if (!m.name || !m.ligaName || !m.leagueSlug || !m.groupId || !m.wettbewerb) {
       throw new Error(`config.json: unvollständiger Mannschaftseintrag (${m.name ?? '?'})`);
+    }
+    if (m.wettbewerb !== 'pokal' && m.wettbewerb !== 'rundenspiel') {
+      throw new Error(`config.json: wettbewerb muss "pokal" oder "rundenspiel" sein (${m.name ?? '?'})`);
     }
   }
 
@@ -85,7 +88,7 @@ async function main() {
 
   for (let i = 0; i < config.mannschaften.length; i++) {
     const mannschaft = config.mannschaften[i];
-    console.log(`→ ${mannschaft.name} (${mannschaft.ligaName}, Gruppe ${mannschaft.groupId})`);
+    console.log(`→ ${mannschaft.name} [${mannschaft.wettbewerb}] (${mannschaft.ligaName}, Gruppe ${mannschaft.groupId})`);
 
     const tabelleJson = await fetchTabelle(config, mannschaft);
     tabellen.mannschaften.push(buildTabellen(config, mannschaft, tabelleJson));

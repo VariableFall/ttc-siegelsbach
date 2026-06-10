@@ -2,17 +2,17 @@
 import Tabelle from './Tabelle.astro';
 import Spielplan from './Spielplan.astro';
 import Hinweis from './Hinweis.astro';
-import type { MannschaftSpielplan, MannschaftTabellen } from '../lib/spieldaten';
-import { spieleChronologisch, tabellenZeilenFuerUi } from '../lib/spieldaten';
+import type { MannschaftWettbewerb } from '../lib/spieldaten';
+import { spieleChronologisch, tabellenZeilenFuerUi, wettbewerbLabel } from '../lib/spieldaten';
 
 interface Props {
-  mannschaftTabellen: MannschaftTabellen;
-  mannschaftSpielplan: MannschaftSpielplan;
+  name: string;
+  wettbewerbe: MannschaftWettbewerb[];
   demo: boolean;
   stand: string;
 }
 
-const { mannschaftTabellen, mannschaftSpielplan, demo, stand } = Astro.props;
+const { name, wettbewerbe, demo, stand } = Astro.props;
 
 const tabelleSpalten = [
   { key: 'platz', label: 'Pl.' },
@@ -21,14 +21,11 @@ const tabelleSpalten = [
   { key: 'punkte', label: 'Pkt.' },
   { key: 'diff', label: 'Diff.' },
 ];
-
-const alleSpiele = spieleChronologisch(mannschaftSpielplan.spiele);
 ---
 
-<section class="mannschafts-block abschnitt" aria-labelledby={`mannschaft-${mannschaftTabellen.name}`}>
-  <h2 id={`mannschaft-${mannschaftTabellen.name}`} class="mannschafts-block__titel">
-    Mannschaft {mannschaftTabellen.name}
-    <span class="mannschafts-block__liga">{mannschaftTabellen.ligaName}</span>
+<section class="mannschafts-block abschnitt" aria-labelledby={`mannschaft-${name}`}>
+  <h2 id={`mannschaft-${name}`} class="mannschafts-block__titel">
+    Mannschaft {name}
   </h2>
 
   {demo && (
@@ -37,27 +34,36 @@ const alleSpiele = spieleChronologisch(mannschaftSpielplan.spiele);
     </Hinweis>
   )}
 
-  <Tabelle
-    caption={`Tabelle – ${mannschaftTabellen.ligaName}`}
-    spalten={tabelleSpalten}
-    zeilen={tabellenZeilenFuerUi(mannschaftTabellen.tabelle)}
-    stand={stand}
-  />
+  {wettbewerbe.map(({ tabellen, spielplan }) => (
+    <div class="mannschafts-block__wettbewerb">
+      <h3 class="mannschafts-block__untertitel">
+        {wettbewerbLabel(tabellen.wettbewerb)}
+        <span class="mannschafts-block__liga">{tabellen.ligaName}</span>
+      </h3>
 
-  <p class="mannschafts-block__link">
-    <a href={mannschaftTabellen.myttTabelleUrl} rel="noopener noreferrer">
-      Tabelle auf mytischtennis.de ansehen →
-    </a>
-  </p>
+      <Tabelle
+        caption={`Tabelle – ${tabellen.ligaName}`}
+        spalten={tabelleSpalten}
+        zeilen={tabellenZeilenFuerUi(tabellen.tabelle)}
+        stand={stand}
+      />
 
-  <div class="mannschafts-block__spiele">
-    <h3 class="mannschafts-block__untertitel">Spielplan</h3>
-    <Spielplan spiele={alleSpiele} />
-  </div>
+      <p class="mannschafts-block__link">
+        <a href={tabellen.myttTabelleUrl} rel="noopener noreferrer">
+          Tabelle auf mytischtennis.de ansehen →
+        </a>
+      </p>
 
-  <p class="mannschafts-block__link">
-    <a href={mannschaftSpielplan.myttSpielplanUrl} rel="noopener noreferrer">
-      Spielplan auf mytischtennis.de ansehen →
-    </a>
-  </p>
+      <div class="mannschafts-block__spiele">
+        <h4 class="mannschafts-block__spielplan-titel">Spielplan</h4>
+        <Spielplan spiele={spieleChronologisch(spielplan.spiele)} />
+      </div>
+
+      <p class="mannschafts-block__link">
+        <a href={spielplan.myttSpielplanUrl} rel="noopener noreferrer">
+          Spielplan auf mytischtennis.de ansehen →
+        </a>
+      </p>
+    </div>
+  ))}
 </section>

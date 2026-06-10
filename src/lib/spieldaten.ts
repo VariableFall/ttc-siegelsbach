@@ -19,8 +19,11 @@ export interface Spiel {
   ort: string | null;
 }
 
+export type Wettbewerb = 'pokal' | 'rundenspiel';
+
 export interface MannschaftTabellen {
   name: string;
+  wettbewerb: Wettbewerb;
   ligaName: string;
   teamName: string;
   myttTabelleUrl: string;
@@ -30,11 +33,51 @@ export interface MannschaftTabellen {
 
 export interface MannschaftSpielplan {
   name: string;
+  wettbewerb: Wettbewerb;
   ligaName: string;
   teamName: string;
   myttTabelleUrl: string;
   myttSpielplanUrl: string;
   spiele: Spiel[];
+}
+
+export interface MannschaftWettbewerb {
+  tabellen: MannschaftTabellen;
+  spielplan: MannschaftSpielplan;
+}
+
+const WETTBEWERB_REIHENFOLGE: Record<Wettbewerb, number> = {
+  rundenspiel: 0,
+  pokal: 1,
+};
+
+export function wettbewerbLabel(wettbewerb: Wettbewerb): string {
+  return wettbewerb === 'pokal' ? 'Pokalspiele' : 'Rundenspiele';
+}
+
+export function mannschaftenGruppiert(
+  tabellen: DatenDatei<MannschaftTabellen>,
+  spielplan: DatenDatei<MannschaftSpielplan>,
+): { name: string; wettbewerbe: MannschaftWettbewerb[] }[] {
+  const namen = [...new Set(tabellen.mannschaften.map((m) => m.name))];
+
+  return namen
+    .map((name) => {
+      const wettbewerbe = tabellen.mannschaften
+        .filter((m) => m.name === name)
+        .sort((a, b) => WETTBEWERB_REIHENFOLGE[a.wettbewerb] - WETTBEWERB_REIHENFOLGE[b.wettbewerb])
+        .map((t) => {
+          const sp = spielplan.mannschaften.find(
+            (s) => s.name === t.name && s.wettbewerb === t.wettbewerb,
+          );
+          if (!sp) return null;
+          return { tabellen: t, spielplan: sp };
+        })
+        .filter((w): w is MannschaftWettbewerb => w !== null);
+
+      return { name, wettbewerbe };
+    })
+    .filter((g) => g.wettbewerbe.length > 0);
 }
 
 export interface DatenDatei<T> {

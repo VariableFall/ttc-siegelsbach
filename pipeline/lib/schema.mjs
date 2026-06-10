@@ -33,6 +33,7 @@ export function createDateiKopf(config, demo) {
 export function createMannschaftBasis(config, mannschaft) {
   return {
     name: mannschaft.name,
+    wettbewerb: mannschaft.wettbewerb,
     ligaName: mannschaft.ligaName,
     leagueSlug: mannschaft.leagueSlug,
     groupId: mannschaft.groupId,

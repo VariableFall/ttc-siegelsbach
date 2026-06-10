@@ -1,5 +1,5 @@
 {
-  "stand": "2026-06-10T15:30:53.302Z",
+  "stand": "2026-06-10T15:40:23.716Z",
   "quelle": "mytischtennis.de",
   "demo": false,
   "verband": "BaTTV",
@@ -9,6 +9,119 @@
   "mannschaften": [
     {
       "name": "I",
+      "wettbewerb": "rundenspiel",
+      "ligaName": "Erwachsene Kreisliga",
+      "leagueSlug": "x",
+      "groupId": "499567",
+      "teamName": "TTC Siegelsbach",
+      "myttTabelleUrl": "https://www.mytischtennis.de/click-tt/BaTTV/25--26/ligen/x/gruppe/499567/tabelle/gesamt",
+      "myttSpielplanUrl": "https://www.mytischtennis.de/click-tt/BaTTV/25--26/ligen/x/gruppe/499567/spielplan/gesamt",
+      "tabelle": [
+        {
+          "platz": 1,
+          "mannschaft": "SG-BR-Treschklingen",
+          "spiele": 18,
+          "siege": 17,
+          "niederlagen": 0,
+          "punkte": "35:1",
+          "diff": "+104",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 2,
+          "mannschaft": "TTC Neidenstein II",
+          "spiele": 18,
+          "siege": 13,
+          "niederlagen": 4,
+          "punkte": "27:9",
+          "diff": "+72",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 3,
+          "mannschaft": "TTC Siegelsbach",
+          "spiele": 18,
+          "siege": 11,
+          "niederlagen": 6,
+          "punkte": "23:13",
+          "diff": "+49",
+          "eigenesTeam": true
+        },
+        {
+          "platz": 4,
+          "mannschaft": "SG-Ittlingen/Kirchardt",
+          "spiele": 18,
+          "siege": 9,
+          "niederlagen": 5,
+          "punkte": "22:14",
+          "diff": "+9",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 5,
+          "mannschaft": "TTC Waldangelloch",
+          "spiele": 18,
+          "siege": 9,
+          "niederlagen": 6,
+          "punkte": "21:15",
+          "diff": "+30",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 6,
+          "mannschaft": "TTC Reihen III",
+          "spiele": 18,
+          "siege": 10,
+          "niederlagen": 7,
+          "punkte": "21:15",
+          "diff": "+9",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 7,
+          "mannschaft": "TTC Gemmingen ",
+          "spiele": 18,
+          "siege": 5,
+          "niederlagen": 11,
+          "punkte": "12:24",
+          "diff": "-52",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 8,
+          "mannschaft": "TTC Haag ",
+          "spiele": 18,
+          "siege": 4,
+          "niederlagen": 11,
+          "punkte": "11:25",
+          "diff": "-47",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 9,
+          "mannschaft": "SG-Zuzenh./Hoffenheim",
+          "spiele": 18,
+          "siege": 3,
+          "niederlagen": 14,
+          "punkte": "7:29",
+          "diff": "-68",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 10,
+          "mannschaft": "TTC Schwarz-Rot Hilsbach",
+          "spiele": 18,
+          "siege": 0,
+          "niederlagen": 17,
+          "punkte": "1:35",
+          "diff": "-106",
+          "eigenesTeam": false
+        }
+      ]
+    },
+    {
+      "name": "I",
+      "wettbewerb": "pokal",
       "ligaName": "Erwachsene C-Pokal",
       "leagueSlug": "x",
       "groupId": "499641",
@@ -230,6 +343,129 @@
     },
     {
       "name": "II",
+      "wettbewerb": "rundenspiel",
+      "ligaName": "Erwachsene Kreisklasse A Nord",
+      "leagueSlug": "x",
+      "groupId": "499557",
+      "teamName": "TTC Siegelsbach II",
+      "myttTabelleUrl": "https://www.mytischtennis.de/click-tt/BaTTV/25--26/ligen/x/gruppe/499557/tabelle/gesamt",
+      "myttSpielplanUrl": "https://www.mytischtennis.de/click-tt/BaTTV/25--26/ligen/x/gruppe/499557/spielplan/gesamt",
+      "tabelle": [
+        {
+          "platz": 1,
+          "mannschaft": "TTV Sulzfeld II",
+          "spiele": 20,
+          "siege": 18,
+          "niederlagen": 2,
+          "punkte": "36:4",
+          "diff": "+133",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 2,
+          "mannschaft": "TTV Eschelbronn",
+          "spiele": 20,
+          "siege": 17,
+          "niederlagen": 1,
+          "punkte": "36:4",
+          "diff": "+101",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 3,
+          "mannschaft": "SG-BR-Treschklingen II",
+          "spiele": 20,
+          "siege": 13,
+          "niederlagen": 6,
+          "punkte": "27:13",
+          "diff": "+32",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 4,
+          "mannschaft": "TV Eppingen II",
+          "spiele": 20,
+          "siege": 10,
+          "niederlagen": 7,
+          "punkte": "23:17",
+          "diff": "+24",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 5,
+          "mannschaft": "TTF Eschelb.-Angelbachtal II",
+          "spiele": 20,
+          "siege": 9,
+          "niederlagen": 8,
+          "punkte": "21:19",
+          "diff": "+14",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 6,
+          "mannschaft": "TTC Waldangelloch II",
+          "spiele": 20,
+          "siege": 10,
+          "niederlagen": 10,
+          "punkte": "20:20",
+          "diff": "-12",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 7,
+          "mannschaft": "TTC Landshausen",
+          "spiele": 20,
+          "siege": 9,
+          "niederlagen": 10,
+          "punkte": "19:21",
+          "diff": "-10",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 8,
+          "mannschaft": "VfB Adersbach  II",
+          "spiele": 20,
+          "siege": 7,
+          "niederlagen": 12,
+          "punkte": "15:25",
+          "diff": "-33",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 9,
+          "mannschaft": "TSV Germania Dühren",
+          "spiele": 20,
+          "siege": 6,
+          "niederlagen": 13,
+          "punkte": "13:27",
+          "diff": "-36",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 10,
+          "mannschaft": "SG-Ittlingen/Kirchardt II",
+          "spiele": 20,
+          "siege": 2,
+          "niederlagen": 16,
+          "punkte": "6:34",
+          "diff": "-93",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 11,
+          "mannschaft": "TTC Siegelsbach II",
+          "spiele": 20,
+          "siege": 1,
+          "niederlagen": 17,
+          "punkte": "4:36",
+          "diff": "-120",
+          "eigenesTeam": true
+        }
+      ]
+    },
+    {
+      "name": "II",
+      "wettbewerb": "pokal",
       "ligaName": "Erwachsene C-Pokal",
       "leagueSlug": "x",
       "groupId": "499641",
@@ -451,6 +687,119 @@
     },
     {
       "name": "III",
+      "wettbewerb": "rundenspiel",
+      "ligaName": "Erwachsene Kreisklasse D Staffel 2 4-er",
+      "leagueSlug": "x",
+      "groupId": "499599",
+      "teamName": "TTC Siegelsbach III",
+      "myttTabelleUrl": "https://www.mytischtennis.de/click-tt/BaTTV/25--26/ligen/x/gruppe/499599/tabelle/gesamt",
+      "myttSpielplanUrl": "https://www.mytischtennis.de/click-tt/BaTTV/25--26/ligen/x/gruppe/499599/spielplan/gesamt",
+      "tabelle": [
+        {
+          "platz": 1,
+          "mannschaft": "TTV Sulzfeld IV",
+          "spiele": 16,
+          "siege": 15,
+          "niederlagen": 1,
+          "punkte": "30:2",
+          "diff": "+103",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 2,
+          "mannschaft": "SG-Ittlingen/Kirchardt IV",
+          "spiele": 16,
+          "siege": 14,
+          "niederlagen": 2,
+          "punkte": "28:4",
+          "diff": "+80",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 3,
+          "mannschaft": "SG-BR-Treschklingen IV",
+          "spiele": 16,
+          "siege": 11,
+          "niederlagen": 4,
+          "punkte": "23:9",
+          "diff": "+38",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 4,
+          "mannschaft": "TTC Daisbach III",
+          "spiele": 16,
+          "siege": 8,
+          "niederlagen": 7,
+          "punkte": "17:15",
+          "diff": "+9",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 5,
+          "mannschaft": "TTF Eschelb.-Angelbachtal VI",
+          "spiele": 16,
+          "siege": 7,
+          "niederlagen": 9,
+          "punkte": "14:18",
+          "diff": "-22",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 6,
+          "mannschaft": "VfB Adersbach  V",
+          "spiele": 16,
+          "siege": 5,
+          "niederlagen": 9,
+          "punkte": "12:20",
+          "diff": "-36",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 7,
+          "mannschaft": "TTC Siegelsbach III",
+          "spiele": 16,
+          "siege": 4,
+          "niederlagen": 10,
+          "punkte": "10:22",
+          "diff": "-31",
+          "eigenesTeam": true
+        },
+        {
+          "platz": 8,
+          "mannschaft": "SV Adelshofen IV",
+          "spiele": 16,
+          "siege": 3,
+          "niederlagen": 12,
+          "punkte": "7:25",
+          "diff": "-56",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 9,
+          "mannschaft": "TTC Tiefenbach III",
+          "spiele": 16,
+          "siege": 1,
+          "niederlagen": 14,
+          "punkte": "3:29",
+          "diff": "-85",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 10,
+          "mannschaft": "TV Eppingen IV",
+          "spiele": 0,
+          "siege": 0,
+          "niederlagen": 0,
+          "punkte": "0:0",
+          "diff": "0",
+          "eigenesTeam": false
+        }
+      ]
+    },
+    {
+      "name": "III",
+      "wettbewerb": "pokal",
       "ligaName": "Erwachsene D-Pokal",
       "leagueSlug": "x",
       "groupId": "499647",
