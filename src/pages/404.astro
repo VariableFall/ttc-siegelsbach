@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { withBase } from '../lib/paths';
 import SeitenTitel from '../components/SeitenTitel.astro';
 
 const currentPath = Astro.url.pathname;
@@ -16,7 +17,7 @@ const currentPath = Astro.url.pathname;
     lead="Die angeforderte Adresse gibt es auf unserer Website nicht – vielleicht wurde sie verschoben oder falsch eingegeben."
   />
   <p class="abschnitt__text">
-    <a href="/">Zur Startseite</a>
-    oder <a href="/mannschaften/">zu den Mannschaften</a>.
+    <a href={withBase('/')}>Zur Startseite</a>
+    oder <a href={withBase('/mannschaften/')}>zu den Mannschaften</a>.
   </p>
 </Base>

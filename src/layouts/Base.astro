@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { DEFAULT_DESCRIPTION, pageTitle as buildPageTitle } from '../lib/seo';
+import { withBase } from '../lib/paths';
 
 interface NavItem {
   label: string;
@@ -91,7 +92,7 @@ const faviconUrl = `${baseUrl}favicon.svg`;
 
     <header class="site-header">
       <div class="site-header__inner">
-        <a href="/" class="wordmark" aria-label="TTC Siegelsbach – Startseite">
+        <a href={withBase('/')} class="wordmark" aria-label="TTC Siegelsbach – Startseite">
           <span class="wordmark__rot">TTC</span> Siegelsbach
         </a>
 
@@ -110,7 +111,7 @@ const faviconUrl = `${baseUrl}favicon.svg`;
             {navItems.map((item) => (
               <li>
                 <a
-                  href={item.href}
+                  href={withBase(item.href)}
                   class:list={['site-nav__link', { 'site-nav__link--active': isActive(item.href, currentPath) }]}
                   aria-current={isActive(item.href, currentPath) ? 'page' : undefined}
                 >
@@ -129,9 +130,9 @@ const faviconUrl = `${baseUrl}favicon.svg`;
 
     <footer class="site-footer">
       <div class="site-footer__inner">
-        <a href="/impressum/" class="site-footer__link">Impressum</a>
+        <a href={withBase('/impressum/')} class="site-footer__link">Impressum</a>
         <span class="site-footer__sep" aria-hidden="true">·</span>
-        <a href="/datenschutz/" class="site-footer__link">Datenschutz</a>
+        <a href={withBase('/datenschutz/')} class="site-footer__link">Datenschutz</a>
         <span class="site-footer__sep" aria-hidden="true">·</span>
         <a href="https://www.battv.de/" class="site-footer__link" rel="noopener noreferrer">BATTV</a>
       </div>

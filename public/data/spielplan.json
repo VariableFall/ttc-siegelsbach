@@ -1,7 +1,7 @@
 {
-  "stand": "2026-06-10T15:11:06.439Z",
-  "quelle": "demo",
-  "demo": true,
+  "stand": "2026-06-10T15:30:53.302Z",
+  "quelle": "mytischtennis.de",
+  "demo": false,
   "verband": "BaTTV",
   "saison": "25--26",
   "vereinsId": "927",
@@ -17,49 +17,31 @@
       "myttSpielplanUrl": "https://www.mytischtennis.de/click-tt/BaTTV/25--26/ligen/x/gruppe/499641/spielplan/gesamt",
       "spiele": [
         {
-          "datum": "2026-09-20",
-          "uhrzeit": "18:15",
-          "heim": "TTC Siegelsbach I",
-          "gast": "TV Eppingen II",
+          "datum": "2025-10-12",
+          "uhrzeit": "23:59",
+          "heim": "TTC Siegelsbach",
+          "gast": "spielfrei*",
           "ergebnis": null,
           "status": "scheduled",
-          "ort": "Sporthalle Siegelsbach"
+          "ort": null
         },
         {
-          "datum": "2026-09-27",
-          "uhrzeit": "18:15",
-          "heim": "TSV Waibstadt",
-          "gast": "TTC Siegelsbach I",
-          "ergebnis": null,
-          "status": "scheduled",
-          "ort": "Turnhalle Waibstadt"
-        },
-        {
-          "datum": "2026-10-04",
-          "uhrzeit": "18:15",
-          "heim": "TTC Siegelsbach I",
-          "gast": "TTV Sulzfeld II",
-          "ergebnis": null,
-          "status": "scheduled",
-          "ort": "Sporthalle Siegelsbach"
-        },
-        {
-          "datum": "2026-05-10",
-          "uhrzeit": "18:15",
-          "heim": "TTC Waldangelloch II",
-          "gast": "TTC Siegelsbach I",
-          "ergebnis": "2:9",
+          "datum": "2025-11-07",
+          "uhrzeit": "20:30",
+          "heim": "TTV Eschelbronn",
+          "gast": "TTC Siegelsbach",
+          "ergebnis": "1:4",
           "status": "done",
-          "ort": "Sporthalle Waldangelloch"
+          "ort": "Sporthalle"
         },
         {
-          "datum": "2026-05-03",
-          "uhrzeit": "18:15",
-          "heim": "TTC Siegelsbach I",
-          "gast": "TSV Waibstadt",
-          "ergebnis": "9:1",
+          "datum": "2025-12-05",
+          "uhrzeit": "20:15",
+          "heim": "TTC Siegelsbach",
+          "gast": "TTC Neidenstein II",
+          "ergebnis": "2:4",
           "status": "done",
-          "ort": "Sporthalle Siegelsbach"
+          "ort": "Sporthalle"
         }
       ]
     },
@@ -73,40 +55,13 @@
       "myttSpielplanUrl": "https://www.mytischtennis.de/click-tt/BaTTV/25--26/ligen/x/gruppe/499641/spielplan/gesamt",
       "spiele": [
         {
-          "datum": "2026-09-21",
-          "uhrzeit": "18:00",
-          "heim": "TTC Siegelsbach II",
-          "gast": "TTC Landshausen",
-          "ergebnis": null,
-          "status": "scheduled",
-          "ort": "Sporthalle Siegelsbach"
-        },
-        {
-          "datum": "2026-09-28",
-          "uhrzeit": "18:00",
-          "heim": "TSV Helmstadt",
-          "gast": "TTC Siegelsbach II",
-          "ergebnis": null,
-          "status": "scheduled",
-          "ort": "Gemeindehalle Helmstadt"
-        },
-        {
-          "datum": "2026-04-09",
+          "datum": "2025-09-23",
           "uhrzeit": "20:15",
           "heim": "TTC Siegelsbach II",
-          "gast": "TTC Waldangelloch II",
-          "ergebnis": "2:9",
+          "gast": "TTV Eschelbronn",
+          "ergebnis": "2:4",
           "status": "done",
-          "ort": "Sporthalle Siegelsbach"
-        },
-        {
-          "datum": "2026-04-13",
-          "uhrzeit": "20:00",
-          "heim": "SG Ittlingen/Kirchardt II",
-          "gast": "TTC Siegelsbach II",
-          "ergebnis": "9:0",
-          "status": "done",
-          "ort": "Festhalle Kirchardt"
+          "ort": "Sporthalle"
         }
       ]
     },
@@ -120,40 +75,22 @@
       "myttSpielplanUrl": "https://www.mytischtennis.de/click-tt/BaTTV/25--26/ligen/x/gruppe/499647/spielplan/gesamt",
       "spiele": [
         {
-          "datum": "2026-09-22",
-          "uhrzeit": "19:30",
-          "heim": "SV Gemmingen II",
-          "gast": "TTC Siegelsbach III",
+          "datum": "2025-09-14",
+          "uhrzeit": "23:59",
+          "heim": "TTC Siegelsbach III",
+          "gast": "spielfrei*",
           "ergebnis": null,
           "status": "scheduled",
-          "ort": "Turnhalle Gemmingen"
+          "ort": null
         },
         {
-          "datum": "2026-09-29",
-          "uhrzeit": "19:30",
+          "datum": "2025-10-07",
+          "uhrzeit": "20:15",
           "heim": "TTC Siegelsbach III",
-          "gast": "TSV Nordheim",
-          "ergebnis": null,
-          "status": "scheduled",
-          "ort": "Sporthalle Siegelsbach"
-        },
-        {
-          "datum": "2026-04-05",
-          "uhrzeit": "19:30",
-          "heim": "TTC Siegelsbach III",
-          "gast": "TTV Reihen",
-          "ergebnis": "9:0",
+          "gast": "VfB Epfenbach  II",
+          "ergebnis": "3:4",
           "status": "done",
-          "ort": "Sporthalle Siegelsbach"
-        },
-        {
-          "datum": "2026-04-12",
-          "uhrzeit": "19:30",
-          "heim": "TV Bad Rappenau III",
-          "gast": "TTC Siegelsbach III",
-          "ergebnis": "6:3",
-          "status": "done",
-          "ort": "Sporthalle Bad Rappenau"
+          "ort": "Sporthalle"
         }
       ]
     }

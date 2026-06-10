@@ -7,6 +7,7 @@ import Hinweis from '../components/Hinweis.astro';
 import { spielplan } from '../data/index';
 import { formatStand, letzteErgebnisse, naechsteSpiele } from '../lib/spieldaten';
 import { PAGE_DESCRIPTIONS } from '../lib/seo';
+import { withBase } from '../lib/paths';
 
 const currentPath = Astro.url.pathname;
 
@@ -46,21 +47,21 @@ const ergebnisse = letzteErgebnisse(spielplan, 3);
     <p class="daten-stand">
       Stand: {formatStand(spielplan.stand)}
       {spielplan.demo ? ' (Beispieldaten)' : ''}
-      · <a href="/mannschaften/">Alle Mannschaften →</a>
+      · <a href={withBase('/mannschaften/')}>Alle Mannschaften →</a>
     </p>
   </section>
 
   <section class="abschnitt" aria-labelledby="teaser-heading">
     <h2 id="teaser-heading" class="abschnitt__titel">Mehr entdecken</h2>
     <div class="teaser-grid">
-      <a href="/training/" class="teaser">
+      <a href={withBase('/training/')} class="teaser">
         <h3 class="teaser__titel">Training</h3>
         <p class="teaser__text">
           Trainingszeiten für Jugend und Erwachsene – Schnuppertraining ist jederzeit möglich.
         </p>
         <span class="teaser__link">Zu den Trainingszeiten →</span>
       </a>
-      <a href="/volleyball/" class="teaser">
+      <a href={withBase('/volleyball/')} class="teaser">
         <h3 class="teaser__titel">Volleyball</h3>
         <p class="teaser__text">
           Unsere Volleyball-Abteilung – Training, Teamgeist und Spaß an der Halle.

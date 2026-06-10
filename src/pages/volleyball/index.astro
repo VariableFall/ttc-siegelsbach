@@ -4,12 +4,13 @@ import SeitenTitel from '../../components/SeitenTitel.astro';
 import Karte from '../../components/Karte.astro';
 import Hinweis from '../../components/Hinweis.astro';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
 
 const currentPath = Astro.url.pathname;
 ---
 
 <Base title="Volleyball" description={PAGE_DESCRIPTIONS.Volleyball} currentPath={currentPath} theme="volleyball">
-  <a href="/" class="zurueck-link">← Zum TTC Siegelsbach</a>
+  <a href={withBase('/')} class="zurueck-link">← Zum TTC Siegelsbach</a>
 
   <SeitenTitel
     titel="Volleyball"
@@ -56,7 +57,7 @@ const currentPath = Astro.url.pathname;
     </p>
     <p class="abschnitt__text">
       Allgemeine Vereinsangelegenheiten findest du auf der
-      <a href="/ueber-uns/">Hauptseite des TTC Siegelsbach</a>.
+      <a href={withBase('/ueber-uns/')}>Hauptseite des TTC Siegelsbach</a>.
     </p>
   </section>
 </Base>

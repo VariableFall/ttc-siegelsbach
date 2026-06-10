@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import SeitenTitel from '../components/SeitenTitel.astro';
 import Karte from '../components/Karte.astro';
 import { PAGE_DESCRIPTIONS } from '../lib/seo';
+import { withBase } from '../lib/paths';
 
 const currentPath = Astro.url.pathname;
 
@@ -63,7 +64,7 @@ const vorstand = [
       Der Beitrag und weitere Details werden dir beim Schnuppertraining erklärt.
     </p>
     <p class="abschnitt__text">
-      <a href="/training/">Trainingszeiten ansehen →</a>
+      <a href={withBase('/training/')}>Trainingszeiten ansehen →</a>
     </p>
   </section>
 </Base>
