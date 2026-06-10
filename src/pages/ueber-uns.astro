@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import SeitenTitel from '../components/SeitenTitel.astro';
 import Karte from '../components/Karte.astro';
+import { PAGE_DESCRIPTIONS } from '../lib/seo';
 
 const currentPath = Astro.url.pathname;
 
@@ -15,7 +16,7 @@ const vorstand = [
 ];
 ---
 
-<Base title="Über uns" currentPath={currentPath}>
+<Base title="Über uns" description={PAGE_DESCRIPTIONS['Über uns']} currentPath={currentPath}>
   <SeitenTitel
     titel="Über uns"
     lead="Der TTC Siegelsbach ist ein eingetragener Tischtennisverein im BATTV mit einer Volleyball-Abteilung."

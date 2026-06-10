@@ -4,12 +4,13 @@ import SeitenTitel from '../components/SeitenTitel.astro';
 import MannschaftsBlock from '../components/MannschaftsBlock.astro';
 import { tabellen, spielplan } from '../data/index';
 import { formatStand } from '../lib/spieldaten';
+import { PAGE_DESCRIPTIONS } from '../lib/seo';
 
 const currentPath = Astro.url.pathname;
 const stand = formatStand(tabellen.stand);
 ---
 
-<Base title="Mannschaften" currentPath={currentPath}>
+<Base title="Mannschaften" description={PAGE_DESCRIPTIONS.Mannschaften} currentPath={currentPath}>
   <SeitenTitel
     titel="Mannschaften"
     lead="Tabellen und Spielpläne unserer gemeldeten Mannschaften im BATTV."

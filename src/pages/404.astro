@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import SeitenTitel from '../components/SeitenTitel.astro';
+
+const currentPath = Astro.url.pathname;
+---
+
+<Base
+  title="Seite nicht gefunden"
+  description="Die angeforderte Seite existiert nicht – TTC Siegelsbach, Tischtennis in Siegelsbach seit 1968."
+  currentPath={currentPath}
+  noindex
+>
+  <SeitenTitel
+    titel="Seite nicht gefunden"
+    lead="Die angeforderte Adresse gibt es auf unserer Website nicht – vielleicht wurde sie verschoben oder falsch eingegeben."
+  />
+  <p class="abschnitt__text">
+    <a href="/">Zur Startseite</a>
+    oder <a href="/mannschaften/">zu den Mannschaften</a>.
+  </p>
+</Base>

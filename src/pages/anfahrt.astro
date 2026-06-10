@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import SeitenTitel from '../components/SeitenTitel.astro';
+import { PAGE_DESCRIPTIONS } from '../lib/seo';
 
 const currentPath = Astro.url.pathname;
 
@@ -12,7 +13,7 @@ const osmMarker = `${osmLat},${osmLon}`;
 const osmLink = `https://www.openstreetmap.org/?mlat=${osmLat}&mlon=${osmLon}#map=14/${osmLat}/${osmLon}`;
 ---
 
-<Base title="Anfahrt" currentPath={currentPath}>
+<Base title="Anfahrt" description={PAGE_DESCRIPTIONS.Anfahrt} currentPath={currentPath}>
   <SeitenTitel
     titel="Anfahrt"
     lead="So findest du uns zur Halle – mit Auto, Fahrrad oder öffentlichen Verkehrsmitteln."
@@ -34,6 +35,8 @@ const osmLink = `https://www.openstreetmap.org/?mlat=${osmLat}&mlon=${osmLon}#ma
       <iframe
         title="OpenStreetMap: Siegelsbach"
         src={`https://www.openstreetmap.org/export/embed.html?bbox=${osmBbox}&layer=mapnik&marker=${osmMarker}`}
+        width="100%"
+        height="352"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>

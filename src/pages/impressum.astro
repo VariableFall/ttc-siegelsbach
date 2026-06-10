@@ -1,11 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
 import SeitenTitel from '../components/SeitenTitel.astro';
+import { PAGE_DESCRIPTIONS } from '../lib/seo';
 
 const currentPath = Astro.url.pathname;
 ---
 
-<Base title="Impressum" currentPath={currentPath}>
+<Base title="Impressum" description={PAGE_DESCRIPTIONS.Impressum} currentPath={currentPath}>
   <SeitenTitel titel="Impressum" />
 
   <div class="rechtstext">

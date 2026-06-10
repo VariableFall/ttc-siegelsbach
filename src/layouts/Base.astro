@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { DEFAULT_DESCRIPTION, pageTitle as buildPageTitle } from '../lib/seo';
 
 interface NavItem {
   label: string;
@@ -12,9 +13,17 @@ interface Props {
   currentPath: string;
   theme?: 'default' | 'volleyball';
   noindex?: boolean;
+  printFriendly?: boolean;
 }
 
-const { title, description = 'TTC Siegelsbach – Tischtennis und Volleyball in Siegelsbach', currentPath: rawPath, theme = 'default', noindex = false } = Astro.props;
+const {
+  title,
+  description = DEFAULT_DESCRIPTION,
+  currentPath: rawPath,
+  theme = 'default',
+  noindex = false,
+  printFriendly = false,
+} = Astro.props;
 
 const navItems: NavItem[] = [
   { label: 'Start', href: '/' },
@@ -41,8 +50,18 @@ function isActive(href: string, path: string): boolean {
   return path === href || path.startsWith(href);
 }
 
-const pageTitle = title === 'Start' ? 'TTC Siegelsbach' : `${title} – TTC Siegelsbach`;
-const bodyClass = theme === 'volleyball' ? 'theme-volleyball' : '';
+const pageTitle = buildPageTitle(title);
+const bodyClass = [theme === 'volleyball' ? 'theme-volleyball' : '', printFriendly ? 'seite--druck' : '']
+  .filter(Boolean)
+  .join(' ');
+
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(`${baseUrl}og-image.svg`, Astro.site).href;
+const faviconUrl = `${baseUrl}favicon.svg`;
 ---
 
 <!doctype html>
@@ -52,10 +71,24 @@ const bodyClass = theme === 'volleyball' ? 'theme-volleyball' : '';
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
-    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/svg+xml" href={faviconUrl} />
     <title>{pageTitle}</title>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="TTC Siegelsbach" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
   </head>
   <body class={bodyClass}>
+    <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+
     <header class="site-header">
       <div class="site-header__inner">
         <a href="/" class="wordmark" aria-label="TTC Siegelsbach – Startseite">
@@ -90,7 +123,7 @@ const bodyClass = theme === 'volleyball' ? 'theme-volleyball' : '';
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <slot />
     </main>
 

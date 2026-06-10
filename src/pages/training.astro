@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import SeitenTitel from '../components/SeitenTitel.astro';
 import Tabelle from '../components/Tabelle.astro';
 import Hinweis from '../components/Hinweis.astro';
+import { PAGE_DESCRIPTIONS } from '../lib/seo';
 
 const currentPath = Astro.url.pathname;
 
@@ -46,7 +47,11 @@ const zeilen = [
 ];
 ---
 
-<Base title="Training" currentPath={currentPath}>
+<Base title="Training" description={PAGE_DESCRIPTIONS.Training} currentPath={currentPath} printFriendly>
+  <div class="print-kopf" aria-hidden="true">
+    <strong>TTC Siegelsbach</strong> – Trainingszeiten · ttc-siegelsbach.de
+  </div>
+
   <SeitenTitel
     titel="Training"
     lead="Trainingszeiten für alle Altersgruppen – einfach vorbeikommen und mitspielen."
@@ -71,7 +76,7 @@ const zeilen = [
     />
   </section>
 
-  <section class="abschnitt" aria-labelledby="mitbringen-heading">
+  <section class="abschnitt print-ausblenden" aria-labelledby="mitbringen-heading">
     <h2 id="mitbringen-heading" class="abschnitt__titel">Was du mitbringen solltest</h2>
     <p class="abschnitt__text">
       Sportkleidung, Hallenschuhe mit heller Sohle und etwas zu trinken.

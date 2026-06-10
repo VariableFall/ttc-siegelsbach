@@ -126,3 +126,10 @@ pipeline/                    # Fetch-Script + config.json (Node)
 - Keine zusätzlichen Dependencies ohne Begründung.
 - Bestehende Komponenten wiederverwenden statt duplizieren.
 - Commits auf Deutsch, prägnant (z.B. "Tabellen-Komponente + Demo-Daten").
+
+## Launch & SEO
+
+- Jede Seite: eigene `description`, sprechender `<title>`, OG-Tags (in `Base.astro`).
+- Beschreibungstexte zentral in `src/lib/seo.ts` (`PAGE_DESCRIPTIONS`).
+- `public/robots.txt`, `public/sitemap.xml`, `src/pages/404.astro`.
+- Trainingsseite: druckfreundlich (`printFriendly` + `@media print` in `global.css`).

@@ -6,6 +6,7 @@ import SpielListe from '../components/SpielListe.astro';
 import Hinweis from '../components/Hinweis.astro';
 import { spielplan } from '../data/index';
 import { formatStand, letzteErgebnisse, naechsteSpiele } from '../lib/spieldaten';
+import { PAGE_DESCRIPTIONS } from '../lib/seo';
 
 const currentPath = Astro.url.pathname;
 
@@ -13,7 +14,7 @@ const kommende = naechsteSpiele(spielplan, 3);
 const ergebnisse = letzteErgebnisse(spielplan, 3);
 ---
 
-<Base title="Start" currentPath={currentPath}>
+<Base title="Start" description={PAGE_DESCRIPTIONS.Start} currentPath={currentPath}>
   <SeitenTitel
     titel="TTC Siegelsbach"
     lead="Tischtennis in Siegelsbach seit 1968"
