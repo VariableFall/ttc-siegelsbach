@@ -80,9 +80,9 @@ pipeline/                    # Fetch-Script + config.json (Node)
 - Fetch-Script defensiv bauen: bei Fehlern alte JSONs NICHT überschreiben,
   Exit-Code != 0, damit der Action-Run sichtbar fehlschlägt.
 - **Deploy nach Daten-Update:** `daten.yml` committet geänderte JSONs und
-  pusht auf `main`. `deploy.yml` reagiert auf `push` und zusätzlich auf
-  erfolgreichen Abschluss von „Daten aktualisieren“ (`workflow_run`), damit
-  die Website mit den neuen Daten neu gebaut wird.
+  pusht auf `main`. `deploy.yml` baut und pusht `dist/` auf den Branch
+  `gh-pages`. GitHub Pages Source: **Deploy from a branch** → `gh-pages`.
+  Workflow permissions: **Read and write**.
 
 ## Design
 

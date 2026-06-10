@@ -53,11 +53,17 @@ Nach Daten-Updates (Cron Mo–So 06:00 & 22:00 UTC) committet **Daten aktualisie
 
 **GitHub Pages einrichten (einmalig – sonst 404!):**
 
-1. Öffne https://github.com/VariableFall/ttc-siegelsbach/settings/pages
-2. Unter **Build and deployment** → **Source:** `GitHub Actions` wählen (nicht „Deploy from a branch“)
-3. Gehe zu **Actions** → Workflow **Deploy to GitHub Pages** → **Re-run all jobs**
+1. **Workflow-Berechtigung:** https://github.com/VariableFall/ttc-siegelsbach/settings/actions  
+   → General → Workflow permissions → **Read and write permissions** → Save
 
-Erst danach ist die Seite unter https://variablefall.github.io/ttc-siegelsbach/ erreichbar.
+2. **Pages-Quelle:** https://github.com/VariableFall/ttc-siegelsbach/settings/pages  
+   → Build and deployment → Source: **Deploy from a branch**  
+   → Branch: **gh-pages** / **/ (root)** → Save
+
+3. **Deploy starten:** Actions → **Deploy to GitHub Pages** → **Re-run all jobs**  
+   (beim ersten Mal erstellt der Workflow den `gh-pages`-Branch automatisch)
+
+Erst danach: https://variablefall.github.io/ttc-siegelsbach/  
 (Die Root-URL `variablefall.github.io` ohne `/ttc-siegelsbach/` zeigt immer 404 – das ist normal.)
 
 ### Eigene Domain (optional)
