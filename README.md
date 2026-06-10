@@ -51,7 +51,14 @@ Push auf `main` → GitHub Action **Deploy to GitHub Pages** baut und veröffent
 
 Nach Daten-Updates (Cron Mo–So 06:00 & 22:00 UTC) committet **Daten aktualisieren** geänderte JSONs und triggert automatisch einen Neu-Build.
 
-**GitHub Pages einrichten (einmalig):** Repo → Settings → Pages → Source: **GitHub Actions**
+**GitHub Pages einrichten (einmalig – sonst 404!):**
+
+1. Öffne https://github.com/VariableFall/ttc-siegelsbach/settings/pages
+2. Unter **Build and deployment** → **Source:** `GitHub Actions` wählen (nicht „Deploy from a branch“)
+3. Gehe zu **Actions** → Workflow **Deploy to GitHub Pages** → **Re-run all jobs**
+
+Erst danach ist die Seite unter https://variablefall.github.io/ttc-siegelsbach/ erreichbar.
+(Die Root-URL `variablefall.github.io` ohne `/ttc-siegelsbach/` zeigt immer 404 – das ist normal.)
 
 ### Eigene Domain (optional)
 
