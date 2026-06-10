@@ -1,0 +1,61 @@
+---
+import Base from '../../layouts/Base.astro';
+import SeitenTitel from '../../components/SeitenTitel.astro';
+import Karte from '../../components/Karte.astro';
+import Hinweis from '../../components/Hinweis.astro';
+
+const currentPath = Astro.url.pathname;
+---
+
+<Base title="Volleyball" currentPath={currentPath} theme="volleyball">
+  <a href="/" class="zurueck-link">← Zum TTC Siegelsbach</a>
+
+  <SeitenTitel
+    titel="Volleyball"
+    lead="Die Volleyball-Abteilung des TTC Siegelsbach – ein Team, eine Halle, viel Spielfreude."
+    hero
+  />
+
+  <section class="abschnitt" aria-labelledby="vb-ueber-uns-heading">
+    <h2 id="vb-ueber-uns-heading" class="abschnitt__titel">Über uns</h2>
+    <p class="abschnitt__text">
+      [PLATZHALTER – Kurze Beschreibung der Volleyball-Abteilung: seit wann
+      aktiv, wer spielt mit, welche Atmosphäre herrscht im Training.]
+    </p>
+    <p class="abschnitt__text">
+      Als Abteilung des TTC Siegelsbach nutzen wir dieselben Hallen und
+      profitieren von der gemeinsamen Vereinsstruktur – mit eigenem Fokus
+      auf Volleyball.
+    </p>
+  </section>
+
+  <section class="abschnitt" aria-labelledby="vb-training-heading">
+    <h2 id="vb-training-heading" class="abschnitt__titel">Training</h2>
+    <div class="karten-grid">
+      <Karte titel="Trainingszeit">
+        <p>[PLATZHALTER – Wochentag und Uhrzeit]</p>
+        <p>[PLATZHALTER – Halle]</p>
+      </Karte>
+      <Karte titel="Ansprechpartner">
+        <p>[NAME]</p>
+        <p>[PLATZHALTER – E-Mail oder Telefon]</p>
+      </Karte>
+    </div>
+    <Hinweis variant="info">
+      Interessiert? Komm zum Training vorbei und schnupper rein – keine
+      Vorkenntnisse nötig.
+    </Hinweis>
+  </section>
+
+  <section class="abschnitt" aria-labelledby="vb-kontakt-heading">
+    <h2 id="vb-kontakt-heading" class="abschnitt__titel">Kontakt</h2>
+    <p class="abschnitt__text">
+      Fragen zur Volleyball-Abteilung? Melde dich bei [NAME] unter
+      [PLATZHALTER – E-Mail-Adresse].
+    </p>
+    <p class="abschnitt__text">
+      Allgemeine Vereinsangelegenheiten findest du auf der
+      <a href="/ueber-uns/">Hauptseite des TTC Siegelsbach</a>.
+    </p>
+  </section>
+</Base>

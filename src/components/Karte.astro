@@ -1,0 +1,14 @@
+---
+interface Props {
+  titel?: string;
+}
+
+const { titel } = Astro.props;
+---
+
+<article class="karte">
+  {titel && <h3 class="karte__titel">{titel}</h3>}
+  <div class="karte__inhalt">
+    <slot />
+  </div>
+</article>

@@ -1,0 +1,81 @@
+---
+import Base from '../layouts/Base.astro';
+import SeitenTitel from '../components/SeitenTitel.astro';
+import Tabelle from '../components/Tabelle.astro';
+import Hinweis from '../components/Hinweis.astro';
+
+const currentPath = Astro.url.pathname;
+
+const spalten = [
+  { key: 'gruppe', label: 'Gruppe' },
+  { key: 'tag', label: 'Tag' },
+  { key: 'uhrzeit', label: 'Uhrzeit' },
+  { key: 'halle', label: 'Halle' },
+  { key: 'ansprechpartner', label: 'Ansprechpartner' },
+];
+
+const zeilen = [
+  {
+    gruppe: 'Kinder (bis 12 J.)',
+    tag: '[PLATZHALTER]',
+    uhrzeit: '[PLATZHALTER]',
+    halle: '[PLATZHALTER – Halle]',
+    ansprechpartner: '[NAME]',
+  },
+  {
+    gruppe: 'Jugend (ab 13 J.)',
+    tag: '[PLATZHALTER]',
+    uhrzeit: '[PLATZHALTER]',
+    halle: '[PLATZHALTER – Halle]',
+    ansprechpartner: '[NAME]',
+  },
+  {
+    gruppe: 'Erwachsene',
+    tag: '[PLATZHALTER]',
+    uhrzeit: '[PLATZHALTER]',
+    halle: '[PLATZHALTER – Halle]',
+    ansprechpartner: '[NAME]',
+  },
+  {
+    gruppe: 'Hobby / Freizeit',
+    tag: '[PLATZHALTER]',
+    uhrzeit: '[PLATZHALTER]',
+    halle: '[PLATZHALTER – Halle]',
+    ansprechpartner: '[NAME]',
+  },
+];
+---
+
+<Base title="Training" currentPath={currentPath}>
+  <SeitenTitel
+    titel="Training"
+    lead="Trainingszeiten für alle Altersgruppen – einfach vorbeikommen und mitspielen."
+  />
+
+  <Hinweis variant="info">
+    Schnuppertraining ist kostenlos und unverbindlich. Komm einfach zu einem
+    Trainingstermin vorbei – Schläger und Bälle stellen wir zur Verfügung.
+  </Hinweis>
+
+  <section class="abschnitt" aria-labelledby="zeiten-heading">
+    <h2 id="zeiten-heading" class="abschnitt__titel">Trainingszeiten</h2>
+    <p class="abschnitt__text">
+      Die Zeiten können sich in den Schulferien oder an Feiertagen ändern.
+      Aktuelle Infos erhältst du beim Ansprechpartner oder auf der Startseite.
+    </p>
+    <Tabelle
+      caption="Trainingszeiten Tischtennis"
+      spalten={spalten}
+      zeilen={zeilen}
+      scrollHinweis={true}
+    />
+  </section>
+
+  <section class="abschnitt" aria-labelledby="mitbringen-heading">
+    <h2 id="mitbringen-heading" class="abschnitt__titel">Was du mitbringen solltest</h2>
+    <p class="abschnitt__text">
+      Sportkleidung, Hallenschuhe mit heller Sohle und etwas zu trinken.
+      Eigene Schläger sind willkommen, aber nicht nötig.
+    </p>
+  </section>
+</Base>

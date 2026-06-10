@@ -1,0 +1,78 @@
+---
+import Base from '../layouts/Base.astro';
+import SeitenTitel from '../components/SeitenTitel.astro';
+import Karte from '../components/Karte.astro';
+import SpielListe from '../components/SpielListe.astro';
+import Hinweis from '../components/Hinweis.astro';
+import spielplan from '../../public/data/spielplan.json';
+import {
+  formatStand,
+  letzteErgebnisse,
+  naechsteSpiele,
+  type DatenDatei,
+  type MannschaftSpielplan,
+} from '../lib/spieldaten';
+
+const currentPath = Astro.url.pathname;
+const spielplanDaten = spielplan as DatenDatei<MannschaftSpielplan>;
+
+const kommende = naechsteSpiele(spielplanDaten, 5);
+const ergebnisse = letzteErgebnisse(spielplanDaten, 5);
+---
+
+<Base title="Start" currentPath={currentPath}>
+  <SeitenTitel
+    titel="TTC Siegelsbach"
+    lead="Tischtennis in Siegelsbach seit 1968"
+    hero
+  />
+
+  {spielplanDaten.demo && (
+    <Hinweis variant="demo">
+      Beispieldaten – Saison 26/27 startet im September
+    </Hinweis>
+  )}
+
+  <section class="abschnitt" aria-labelledby="spiele-heading">
+    <div class="karten-grid">
+      <Karte titel="Nächste Spiele">
+        <SpielListe
+          spiele={kommende}
+          leerText="Aktuell keine anstehenden Spiele. Alle Termine findest du auf der Mannschaften-Seite."
+        />
+      </Karte>
+      <Karte titel="Letzte Ergebnisse">
+        <SpielListe
+          spiele={ergebnisse}
+          ergebnisse
+          leerText="Noch keine Ergebnisse in dieser Saison."
+        />
+      </Karte>
+    </div>
+    <p class="daten-stand">
+      Stand: {formatStand(spielplanDaten.stand)}
+      {spielplanDaten.demo ? ' (Beispieldaten)' : ''}
+      · <a href="/mannschaften/">Alle Mannschaften →</a>
+    </p>
+  </section>
+
+  <section class="abschnitt" aria-labelledby="teaser-heading">
+    <h2 id="teaser-heading" class="abschnitt__titel">Mehr entdecken</h2>
+    <div class="teaser-grid">
+      <a href="/training/" class="teaser">
+        <h3 class="teaser__titel">Training</h3>
+        <p class="teaser__text">
+          Trainingszeiten für Jugend und Erwachsene – Schnuppertraining ist jederzeit möglich.
+        </p>
+        <span class="teaser__link">Zu den Trainingszeiten →</span>
+      </a>
+      <a href="/volleyball/" class="teaser">
+        <h3 class="teaser__titel">Volleyball</h3>
+        <p class="teaser__text">
+          Unsere Volleyball-Abteilung – Training, Teamgeist und Spaß an der Halle.
+        </p>
+        <span class="teaser__link">Zur Volleyball-Abteilung →</span>
+      </a>
+    </div>
+  </section>
+</Base>

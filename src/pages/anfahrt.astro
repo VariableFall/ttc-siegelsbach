@@ -1,0 +1,67 @@
+---
+import Base from '../layouts/Base.astro';
+import SeitenTitel from '../components/SeitenTitel.astro';
+
+const currentPath = Astro.url.pathname;
+
+// Ungefähre Koordinaten Siegelsbach – nach Eingabe der Hallenadresse anpassen
+const osmLat = '49.2653';
+const osmLon = '8.8847';
+const osmBbox = '8.855,49.255,8.915,49.275';
+const osmMarker = `${osmLat},${osmLon}`;
+const osmLink = `https://www.openstreetmap.org/?mlat=${osmLat}&mlon=${osmLon}#map=14/${osmLat}/${osmLon}`;
+---
+
+<Base title="Anfahrt" currentPath={currentPath}>
+  <SeitenTitel
+    titel="Anfahrt"
+    lead="So findest du uns zur Halle – mit Auto, Fahrrad oder öffentlichen Verkehrsmitteln."
+  />
+
+  <section class="abschnitt" aria-labelledby="adresse-heading">
+    <h2 id="adresse-heading" class="abschnitt__titel">Adresse</h2>
+    <address class="adresse-block">
+      <strong>TTC Siegelsbach</strong>
+      [PLATZHALTER – Name der Halle]<br />
+      [PLATZHALTER – Straße und Hausnummer]<br />
+      [PLATZHALTER – PLZ] Siegelsbach
+    </address>
+  </section>
+
+  <section class="abschnitt" aria-labelledby="karte-heading">
+    <h2 id="karte-heading" class="abschnitt__titel">Karte</h2>
+    <div class="karte-karte">
+      <iframe
+        title="OpenStreetMap: Siegelsbach"
+        src={`https://www.openstreetmap.org/export/embed.html?bbox=${osmBbox}&layer=mapnik&marker=${osmMarker}`}
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+      <p class="karte-karte__hinweis">
+        Karte zeigt den Ort Siegelsbach.
+        <a href={osmLink} class="karte-karte__link" rel="noopener noreferrer">
+          Größere Karte auf OpenStreetMap öffnen
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <section class="abschnitt" aria-labelledby="parken-heading">
+    <h2 id="parken-heading" class="abschnitt__titel">Parken</h2>
+    <p class="abschnitt__text">
+      [PLATZHALTER – Hinweise zum Parken: Parkplätze vor der Halle, kostenfrei
+      oder gebührenpflichtig, Alternativen bei Veranstaltungen.]
+    </p>
+    <p class="abschnitt__text">
+      Bitte achte auf Anwohner und halte Feuerwehrzufahrten frei.
+    </p>
+  </section>
+
+  <section class="abschnitt" aria-labelledby="oeffentlich-heading">
+    <h2 id="oeffentlich-heading" class="abschnitt__titel">Öffentliche Verkehrsmittel</h2>
+    <p class="abschnitt__text">
+      [PLATZHALTER – Nächste Bushaltestelle oder Bahnhof, Linien, Fußweg
+      zur Halle in Minuten.]
+    </p>
+  </section>
+</Base>

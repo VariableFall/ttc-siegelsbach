@@ -1,0 +1,98 @@
+{
+  "stand": "2026-06-10T15:04:56.154Z",
+  "quelle": "mytischtennis.de",
+  "demo": false,
+  "verband": "BaTTV",
+  "saison": "25--26",
+  "vereinsId": "927",
+  "vereinsSlug": "TTC_Siegelsbach",
+  "mannschaften": [
+    {
+      "name": "I",
+      "ligaName": "Erwachsene C-Pokal",
+      "leagueSlug": "x",
+      "groupId": "499641",
+      "teamName": "TTC Siegelsbach",
+      "myttTabelleUrl": "https://www.mytischtennis.de/click-tt/BaTTV/25--26/ligen/x/gruppe/499641/tabelle/gesamt",
+      "myttSpielplanUrl": "https://www.mytischtennis.de/click-tt/BaTTV/25--26/ligen/x/gruppe/499641/spielplan/gesamt",
+      "spiele": [
+        {
+          "datum": "2025-10-12",
+          "uhrzeit": "23:59",
+          "heim": "TTC Siegelsbach",
+          "gast": "spielfrei*",
+          "ergebnis": null,
+          "status": "scheduled",
+          "ort": null
+        },
+        {
+          "datum": "2025-11-07",
+          "uhrzeit": "20:30",
+          "heim": "TTV Eschelbronn",
+          "gast": "TTC Siegelsbach",
+          "ergebnis": "1:4",
+          "status": "done",
+          "ort": "Sporthalle"
+        },
+        {
+          "datum": "2025-12-05",
+          "uhrzeit": "20:15",
+          "heim": "TTC Siegelsbach",
+          "gast": "TTC Neidenstein II",
+          "ergebnis": "2:4",
+          "status": "done",
+          "ort": "Sporthalle"
+        }
+      ]
+    },
+    {
+      "name": "II",
+      "ligaName": "Erwachsene C-Pokal",
+      "leagueSlug": "x",
+      "groupId": "499641",
+      "teamName": "TTC Siegelsbach II",
+      "myttTabelleUrl": "https://www.mytischtennis.de/click-tt/BaTTV/25--26/ligen/x/gruppe/499641/tabelle/gesamt",
+      "myttSpielplanUrl": "https://www.mytischtennis.de/click-tt/BaTTV/25--26/ligen/x/gruppe/499641/spielplan/gesamt",
+      "spiele": [
+        {
+          "datum": "2025-09-23",
+          "uhrzeit": "20:15",
+          "heim": "TTC Siegelsbach II",
+          "gast": "TTV Eschelbronn",
+          "ergebnis": "2:4",
+          "status": "done",
+          "ort": "Sporthalle"
+        }
+      ]
+    },
+    {
+      "name": "III",
+      "ligaName": "Erwachsene D-Pokal",
+      "leagueSlug": "x",
+      "groupId": "499647",
+      "teamName": "TTC Siegelsbach III",
+      "myttTabelleUrl": "https://www.mytischtennis.de/click-tt/BaTTV/25--26/ligen/x/gruppe/499647/tabelle/gesamt",
+      "myttSpielplanUrl": "https://www.mytischtennis.de/click-tt/BaTTV/25--26/ligen/x/gruppe/499647/spielplan/gesamt",
+      "spiele": [
+        {
+          "datum": "2025-09-14",
+          "uhrzeit": "23:59",
+          "heim": "TTC Siegelsbach III",
+          "gast": "spielfrei*",
+          "ergebnis": null,
+          "status": "scheduled",
+          "ort": null
+        },
+        {
+          "datum": "2025-10-07",
+          "uhrzeit": "20:15",
+          "heim": "TTC Siegelsbach III",
+          "gast": "VfB Epfenbach  II",
+          "ergebnis": "3:4",
+          "status": "done",
+          "ort": "Sporthalle"
+        }
+      ]
+    }
+  ]
+}

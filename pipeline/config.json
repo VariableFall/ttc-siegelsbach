@@ -1,0 +1,29 @@
+{
+  "verband": "BaTTV",
+  "saison": "25--26",
+  "vereinsId": "927",
+  "vereinsSlug": "TTC_Siegelsbach",
+  "mannschaften": [
+    {
+      "name": "I",
+      "teamName": "TTC Siegelsbach",
+      "ligaName": "Erwachsene C-Pokal",
+      "leagueSlug": "x",
+      "groupId": "499641"
+    },
+    {
+      "name": "II",
+      "teamName": "TTC Siegelsbach II",
+      "ligaName": "Erwachsene C-Pokal",
+      "leagueSlug": "x",
+      "groupId": "499641"
+    },
+    {
+      "name": "III",
+      "teamName": "TTC Siegelsbach III",
+      "ligaName": "Erwachsene D-Pokal",
+      "leagueSlug": "x",
+      "groupId": "499647"
+    }
+  ]
+}

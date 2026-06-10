@@ -1,0 +1,54 @@
+---
+export interface Spalte {
+  key: string;
+  label: string;
+}
+
+export interface Zeile {
+  [key: string]: string | number;
+}
+
+interface Props {
+  spalten: Spalte[];
+  zeilen: Zeile[];
+  caption?: string;
+  stand?: string;
+  scrollHinweis?: boolean;
+}
+
+const { spalten, zeilen, caption, stand, scrollHinweis = true } = Astro.props;
+const showScrollHint = scrollHinweis && spalten.length > 3;
+---
+
+<div class="tabelle-block">
+  {caption && <p class="tabelle-block__caption" id="tabelle-caption">{caption}</p>}
+
+  <div class:list={['tabelle-wrap', { 'tabelle-wrap--scrollable': showScrollHint }]}>
+    <table
+      class="tabelle"
+      aria-labelledby={caption ? 'tabelle-caption' : undefined}
+    >
+      <thead>
+        <tr>
+          {spalten.map((spalte) => (
+            <th scope="col">{spalte.label}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {zeilen.map((zeile) => (
+          <tr>
+            {spalten.map((spalte) => (
+              <td>{zeile[spalte.key] ?? '–'}</td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  {showScrollHint && (
+    <p class="tabelle-scroll-hinweis" aria-hidden="true">← Tabelle wischen →</p>
+  )}
+
+  {stand && <p class="tabelle__stand">Stand: {stand}</p>}
+</div>

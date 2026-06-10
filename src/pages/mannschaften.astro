@@ -1,0 +1,39 @@
+---
+import Base from '../layouts/Base.astro';
+import SeitenTitel from '../components/SeitenTitel.astro';
+import MannschaftsBlock from '../components/MannschaftsBlock.astro';
+import tabellen from '../../public/data/tabellen.json';
+import spielplan from '../../public/data/spielplan.json';
+import {
+  formatStand,
+  type DatenDatei,
+  type MannschaftSpielplan,
+  type MannschaftTabellen,
+} from '../lib/spieldaten';
+
+const currentPath = Astro.url.pathname;
+
+const tabellenDaten = tabellen as DatenDatei<MannschaftTabellen>;
+const spielplanDaten = spielplan as DatenDatei<MannschaftSpielplan>;
+const stand = formatStand(tabellenDaten.stand);
+---
+
+<Base title="Mannschaften" currentPath={currentPath}>
+  <SeitenTitel
+    titel="Mannschaften"
+    lead="Tabellen und Spielpläne unserer gemeldeten Mannschaften im BATTV."
+  />
+
+  {tabellenDaten.mannschaften.map((m) => {
+    const sp = spielplanDaten.mannschaften.find((s) => s.name === m.name);
+    if (!sp) return null;
+    return (
+      <MannschaftsBlock
+        mannschaftTabellen={m}
+        mannschaftSpielplan={sp}
+        demo={tabellenDaten.demo}
+        stand={stand}
+      />
+    );
+  })}
+</Base>

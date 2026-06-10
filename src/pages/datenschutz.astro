@@ -1,0 +1,129 @@
+---
+import Base from '../layouts/Base.astro';
+import SeitenTitel from '../components/SeitenTitel.astro';
+
+const currentPath = Astro.url.pathname;
+---
+
+<Base title="Datenschutz" currentPath={currentPath}>
+  <SeitenTitel titel="Datenschutz" />
+
+  <div class="rechtstext">
+    <h2>1. Verantwortlicher</h2>
+    <p>
+      Verantwortlich für die Datenverarbeitung auf dieser Website ist:
+    </p>
+    <p>
+      TTC Siegelsbach e.V.<br />
+      [PLATZHALTER – Straße und Hausnummer]<br />
+      [PLATZHALTER – PLZ] Siegelsbach<br />
+      E-Mail: [PLATZHALTER – E-Mail-Adresse]
+    </p>
+
+    <h2>2. Überblick</h2>
+    <p>
+      Diese Website ist eine rein informative Vereinswebsite. Wir setzen keine
+      Tracking-Tools ein, verwenden keine Cookies und binden keine externen
+      Schriftarten oder Analyse-Dienste ein. Personenbezogene Daten werden nur
+      verarbeitet, soweit dies für den Betrieb der Website technisch
+      erforderlich ist.
+    </p>
+
+    <h2>3. Hosting</h2>
+    <p>
+      Diese Website wird über GitHub Pages gehostet. Anbieter ist die
+      GitHub, Inc., 88 Colin P. Kelly Jr. St, San Francisco, CA 94107, USA.
+    </p>
+    <p>
+      Beim Aufruf der Website werden automatisch Informationen an den Server
+      übermittelt, die dein Browser übermittelt. Dazu können gehören:
+    </p>
+    <ul>
+      <li>IP-Adresse</li>
+      <li>Datum und Uhrzeit der Anfrage</li>
+      <li>Browsertyp und -version</li>
+      <li>Betriebssystem</li>
+      <li>Referrer-URL</li>
+    </ul>
+    <p>
+      Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO
+      (berechtigtes Interesse an einem sicheren und stabilen Betrieb der
+      Website). Die Daten werden in Server-Logfiles gespeichert und nach einer
+      [PLATZHALTER – Speicherdauer, z. B. 30 Tagen] automatisch gelöscht.
+    </p>
+    <p>
+      Weitere Informationen: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener noreferrer">GitHub Privacy Statement</a>
+    </p>
+
+    <h2>4. Eingebettete Karten (OpenStreetMap)</h2>
+    <p>
+      Auf der Seite „Anfahrt" binden wir eine Karte von OpenStreetMap ein.
+      Beim Laden der Karte wird eine Verbindung zu Servern der OpenStreetMap
+      Foundation hergestellt. Dabei kann deine IP-Adresse übermittelt werden.
+    </p>
+    <p>
+      Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse
+      an einer nutzerfreundlichen Darstellung unseres Standorts). Die Karte
+      wird erst geladen, wenn du die Anfahrt-Seite aufrufst.
+    </p>
+
+    <h2>5. Externe Links</h2>
+    <p>
+      Diese Website enthält Links zu externen Websites (z. B. BATTV,
+      OpenStreetMap). Für die Datenverarbeitung auf diesen Seiten sind die
+      jeweiligen Betreiber verantwortlich. Wir haben keinen Einfluss auf deren
+      Datenschutzpraktiken.
+    </p>
+
+    <h2>6. Schriftarten</h2>
+    <p>
+      Die auf dieser Website verwendeten Schriftarten (Archivo, Inter) werden
+      lokal vom Webserver ausgeliefert. Es findet keine Verbindung zu
+      Google Fonts oder anderen externen CDN-Diensten statt.
+    </p>
+
+    <h2>7. Kontaktaufnahme per E-Mail</h2>
+    <p>
+      Wenn du uns per E-Mail kontaktierst, werden die von dir übermittelten
+      Daten (E-Mail-Adresse, Inhalt der Nachricht) zur Bearbeitung deiner
+      Anfrage gespeichert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO
+      (Vertragsanbahnung) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes
+      Interesse an der Beantwortung von Anfragen).
+    </p>
+    <p>
+      Die Daten werden gelöscht, sobald die Anfrage abschließend bearbeitet
+      wurde und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
+    </p>
+
+    <h2>8. Deine Rechte</h2>
+    <p>Du hast gegenüber uns folgende Rechte bezüglich deiner personenbezogenen Daten:</p>
+    <ul>
+      <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
+      <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
+      <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+      <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+      <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+      <li>Recht auf Widerspruch (Art. 21 DSGVO)</li>
+    </ul>
+    <p>
+      Zur Ausübung deiner Rechte wende dich an
+      [PLATZHALTER – E-Mail-Adresse].
+    </p>
+    <p>
+      Du hast außerdem das Recht, dich bei einer Datenschutz-Aufsichtsbehörde
+      zu beschweren. Zuständig in Baden-Württemberg ist der
+      Landesbeauftragte für den Datenschutz und die Informationsfreiheit
+      Baden-Württemberg (LfDI BW).
+    </p>
+
+    <h2>9. Änderungen</h2>
+    <p>
+      Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie
+      stets den aktuellen rechtlichen Anforderungen entspricht. Die jeweils
+      aktuelle Version findest du auf dieser Seite.
+    </p>
+    <p>
+      Stand: [PLATZHALTER – Datum]
+    </p>
+  </div>
+</Base>

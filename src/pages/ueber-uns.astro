@@ -1,0 +1,68 @@
+---
+import Base from '../layouts/Base.astro';
+import SeitenTitel from '../components/SeitenTitel.astro';
+import Karte from '../components/Karte.astro';
+
+const currentPath = Astro.url.pathname;
+
+const vorstand = [
+  { rolle: '1. Vorsitzende/r', name: '[NAME]' },
+  { rolle: '2. Vorsitzende/r', name: '[NAME]' },
+  { rolle: 'Kassenwart/in', name: '[NAME]' },
+  { rolle: 'Schriftführer/in', name: '[NAME]' },
+  { rolle: 'Sportwart/in', name: '[NAME]' },
+  { rolle: 'Jugendwart/in', name: '[NAME]' },
+];
+---
+
+<Base title="Über uns" currentPath={currentPath}>
+  <SeitenTitel
+    titel="Über uns"
+    lead="Der TTC Siegelsbach ist ein eingetragener Tischtennisverein im BATTV mit einer Volleyball-Abteilung."
+  />
+
+  <section class="abschnitt" aria-labelledby="geschichte-heading">
+    <h2 id="geschichte-heading" class="abschnitt__titel">Vereinsgeschichte</h2>
+    <p class="abschnitt__text">
+      [PLATZHALTER – Kurze Geschichte des Vereins: Gründung, Meilensteine,
+      Entwicklung der Abteilungen und die Bedeutung des Tischtennissports in
+      Siegelsbach.]
+    </p>
+    <p class="abschnitt__text">
+      Seit 1968 spielen wir Tischtennis in Siegelsbach – damals wie heute mit
+      dem Ziel, den Sport für Jung und Alt zugänglich zu machen.
+    </p>
+  </section>
+
+  <section class="abschnitt" aria-labelledby="vorstand-heading">
+    <h2 id="vorstand-heading" class="abschnitt__titel">Vorstand</h2>
+    <p class="abschnitt__text">
+      Der Vorstand wird von der Mitgliederversammlung gewählt und führt die
+      Geschäfte des Vereins ehrenamtlich.
+    </p>
+    <div class="vorstand-grid">
+      {vorstand.map((person) => (
+        <Karte>
+          <p class="vorstand-karte__rolle">{person.rolle}</p>
+          <p class="vorstand-karte__name">{person.name}</p>
+        </Karte>
+      ))}
+    </div>
+  </section>
+
+  <section class="abschnitt" aria-labelledby="mitglied-heading">
+    <h2 id="mitglied-heading" class="abschnitt__titel">Mitglied werden</h2>
+    <p class="abschnitt__text">
+      Du möchtest beim TTC Siegelsbach mitspielen? Komm einfach zum Training
+      vorbei und schnupper rein – die Teilnahme ist zunächst kostenlos.
+    </p>
+    <p class="abschnitt__text">
+      Für die offizielle Mitgliedschaft wende dich an
+      [PLATZHALTER – Kontakt E-Mail oder Ansprechpartner].
+      Der Beitrag und weitere Details werden dir beim Schnuppertraining erklärt.
+    </p>
+    <p class="abschnitt__text">
+      <a href="/training/">Trainingszeiten ansehen →</a>
+    </p>
+  </section>
+</Base>

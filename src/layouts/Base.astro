@@ -1,0 +1,128 @@
+---
+import '../styles/global.css';
+
+interface NavItem {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  title: string;
+  description?: string;
+  currentPath: string;
+  theme?: 'default' | 'volleyball';
+  noindex?: boolean;
+}
+
+const { title, description = 'TTC Siegelsbach – Tischtennis und Volleyball in Siegelsbach', currentPath: rawPath, theme = 'default', noindex = false } = Astro.props;
+
+const navItems: NavItem[] = [
+  { label: 'Start', href: '/' },
+  { label: 'Über uns', href: '/ueber-uns/' },
+  { label: 'Training', href: '/training/' },
+  { label: 'Mannschaften', href: '/mannschaften/' },
+  { label: 'Anfahrt', href: '/anfahrt/' },
+  { label: 'Volleyball', href: '/volleyball/' },
+];
+
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
+let currentPath = rawPath;
+if (basePath && currentPath.startsWith(basePath)) {
+  currentPath = currentPath.slice(basePath.length) || '/';
+}
+if (currentPath !== '/' && !currentPath.endsWith('/')) {
+  currentPath += '/';
+}
+
+function isActive(href: string, path: string): boolean {
+  if (href === '/') {
+    return path === '/' || path === '';
+  }
+  return path === href || path.startsWith(href);
+}
+
+const pageTitle = title === 'Start' ? 'TTC Siegelsbach' : `${title} – TTC Siegelsbach`;
+const bodyClass = theme === 'volleyball' ? 'theme-volleyball' : '';
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <title>{pageTitle}</title>
+  </head>
+  <body class={bodyClass}>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a href="/" class="wordmark" aria-label="TTC Siegelsbach – Startseite">
+          <span class="wordmark__rot">TTC</span> Siegelsbach
+        </a>
+
+        <button
+          type="button"
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Menü öffnen"
+        >
+          <span class="nav-toggle__icon" aria-hidden="true"></span>
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Hauptnavigation">
+          <ul class="site-nav__list">
+            {navItems.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class:list={['site-nav__link', { 'site-nav__link--active': isActive(item.href, currentPath) }]}
+                  aria-current={isActive(item.href, currentPath) ? 'page' : undefined}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <a href="/impressum/" class="site-footer__link">Impressum</a>
+        <span class="site-footer__sep" aria-hidden="true">·</span>
+        <a href="/datenschutz/" class="site-footer__link">Datenschutz</a>
+        <span class="site-footer__sep" aria-hidden="true">·</span>
+        <a href="https://www.battv.de/" class="site-footer__link" rel="noopener noreferrer">BATTV</a>
+      </div>
+    </footer>
+
+    <script is:inline>
+      const toggle = document.querySelector('.nav-toggle');
+      const nav = document.querySelector('.site-nav');
+
+      if (toggle && nav) {
+        toggle.addEventListener('click', () => {
+          const open = nav.classList.toggle('site-nav--open');
+          toggle.setAttribute('aria-expanded', String(open));
+          toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+        });
+
+        nav.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            nav.classList.remove('site-nav--open');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.setAttribute('aria-label', 'Menü öffnen');
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

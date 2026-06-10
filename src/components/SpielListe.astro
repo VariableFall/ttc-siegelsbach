@@ -1,0 +1,36 @@
+---
+import type { SpielEintrag } from '../lib/spieldaten';
+import { formatSpielDatum } from '../lib/spieldaten';
+
+interface Props {
+  spiele: SpielEintrag[];
+  ergebnisse?: boolean;
+  leerText: string;
+}
+
+const { spiele, ergebnisse = false, leerText } = Astro.props;
+---
+
+{spiele.length === 0 ? (
+  <p class="leer-zustand">{leerText}</p>
+) : (
+  <ul class="spiel-liste">
+    {spiele.map((spiel) => (
+      <li class="spiel-liste__eintrag">
+        <time class="spiel-liste__datum" datetime={spiel.datum ?? undefined}>
+          {formatSpielDatum(spiel.datum, spiel.uhrzeit)}
+        </time>
+        <span class="spiel-liste__teams">
+          <span class="spiel-liste__team">{spiel.heim}</span>
+          <span class="spiel-liste__vs" aria-hidden="true">
+            {ergebnisse && spiel.ergebnis ? spiel.ergebnis : 'vs'}
+          </span>
+          <span class="spiel-liste__team">{spiel.gast}</span>
+        </span>
+        <span class="spiel-liste__meta">
+          Mannschaft {spiel.mannschaft} · {spiel.ligaName}
+        </span>
+      </li>
+    ))}
+  </ul>
+)}

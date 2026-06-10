@@ -1,0 +1,844 @@
+{
+  "stand": "2026-06-10T15:04:56.154Z",
+  "quelle": "mytischtennis.de",
+  "demo": false,
+  "verband": "BaTTV",
+  "saison": "25--26",
+  "vereinsId": "927",
+  "vereinsSlug": "TTC_Siegelsbach",
+  "mannschaften": [
+    {
+      "name": "I",
+      "ligaName": "Erwachsene C-Pokal",
+      "leagueSlug": "x",
+      "groupId": "499641",
+      "teamName": "TTC Siegelsbach",
+      "myttTabelleUrl": "https://www.mytischtennis.de/click-tt/BaTTV/25--26/ligen/x/gruppe/499641/tabelle/gesamt",
+      "myttSpielplanUrl": "https://www.mytischtennis.de/click-tt/BaTTV/25--26/ligen/x/gruppe/499641/spielplan/gesamt",
+      "tabelle": [
+        {
+          "platz": 1,
+          "mannschaft": "TTC Neidenstein II",
+          "spiele": 4,
+          "siege": 4,
+          "niederlagen": 0,
+          "punkte": "8:0",
+          "diff": "+12",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 2,
+          "mannschaft": "TTC Reihen III",
+          "spiele": 5,
+          "siege": 4,
+          "niederlagen": 1,
+          "punkte": "8:2",
+          "diff": "+9",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 3,
+          "mannschaft": "TTC Waldangelloch",
+          "spiele": 3,
+          "siege": 2,
+          "niederlagen": 1,
+          "punkte": "4:2",
+          "diff": "+6",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 4,
+          "mannschaft": "SG-BR-Treschklingen",
+          "spiele": 3,
+          "siege": 2,
+          "niederlagen": 1,
+          "punkte": "4:2",
+          "diff": "+4",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 5,
+          "mannschaft": "TTC Haag ",
+          "spiele": 3,
+          "siege": 2,
+          "niederlagen": 1,
+          "punkte": "4:2",
+          "diff": "+3",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 6,
+          "mannschaft": "SG-Ittlingen/Kirchardt",
+          "spiele": 3,
+          "siege": 2,
+          "niederlagen": 1,
+          "punkte": "4:2",
+          "diff": "+1",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 7,
+          "mannschaft": "TTC Siegelsbach",
+          "spiele": 2,
+          "siege": 1,
+          "niederlagen": 1,
+          "punkte": "2:2",
+          "diff": "+1",
+          "eigenesTeam": true
+        },
+        {
+          "platz": 8,
+          "mannschaft": "SG-BR-Treschklingen II",
+          "spiele": 2,
+          "siege": 1,
+          "niederlagen": 1,
+          "punkte": "2:2",
+          "diff": "+1",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 9,
+          "mannschaft": "TTV Eschelbronn",
+          "spiele": 2,
+          "siege": 1,
+          "niederlagen": 1,
+          "punkte": "2:2",
+          "diff": "-1",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 10,
+          "mannschaft": "TTC Landshausen",
+          "spiele": 2,
+          "siege": 1,
+          "niederlagen": 1,
+          "punkte": "2:2",
+          "diff": "-2",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 11,
+          "mannschaft": "VfB Adersbach  II",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-1",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 12,
+          "mannschaft": "TTC Siegelsbach II",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-2",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 13,
+          "mannschaft": "TV Eppingen II",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-2",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 14,
+          "mannschaft": "TTF Eschelb.-Angelbachtal II",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-3",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 15,
+          "mannschaft": "TTC Gemmingen ",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-3",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 16,
+          "mannschaft": "TTC Waldangelloch II",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-3",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 17,
+          "mannschaft": "SG-Zuzenh./Hoffenheim",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-4",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 18,
+          "mannschaft": "TSV Germania Dühren",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-4",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 19,
+          "mannschaft": "TTC Schwarz-Rot Hilsbach",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-4",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 20,
+          "mannschaft": "SG-Ittlingen/Kirchardt II",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-4",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 21,
+          "mannschaft": "TTV Sulzfeld II",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-4",
+          "eigenesTeam": false
+        }
+      ]
+    },
+    {
+      "name": "II",
+      "ligaName": "Erwachsene C-Pokal",
+      "leagueSlug": "x",
+      "groupId": "499641",
+      "teamName": "TTC Siegelsbach II",
+      "myttTabelleUrl": "https://www.mytischtennis.de/click-tt/BaTTV/25--26/ligen/x/gruppe/499641/tabelle/gesamt",
+      "myttSpielplanUrl": "https://www.mytischtennis.de/click-tt/BaTTV/25--26/ligen/x/gruppe/499641/spielplan/gesamt",
+      "tabelle": [
+        {
+          "platz": 1,
+          "mannschaft": "TTC Neidenstein II",
+          "spiele": 4,
+          "siege": 4,
+          "niederlagen": 0,
+          "punkte": "8:0",
+          "diff": "+12",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 2,
+          "mannschaft": "TTC Reihen III",
+          "spiele": 5,
+          "siege": 4,
+          "niederlagen": 1,
+          "punkte": "8:2",
+          "diff": "+9",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 3,
+          "mannschaft": "TTC Waldangelloch",
+          "spiele": 3,
+          "siege": 2,
+          "niederlagen": 1,
+          "punkte": "4:2",
+          "diff": "+6",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 4,
+          "mannschaft": "SG-BR-Treschklingen",
+          "spiele": 3,
+          "siege": 2,
+          "niederlagen": 1,
+          "punkte": "4:2",
+          "diff": "+4",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 5,
+          "mannschaft": "TTC Haag ",
+          "spiele": 3,
+          "siege": 2,
+          "niederlagen": 1,
+          "punkte": "4:2",
+          "diff": "+3",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 6,
+          "mannschaft": "SG-Ittlingen/Kirchardt",
+          "spiele": 3,
+          "siege": 2,
+          "niederlagen": 1,
+          "punkte": "4:2",
+          "diff": "+1",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 7,
+          "mannschaft": "TTC Siegelsbach",
+          "spiele": 2,
+          "siege": 1,
+          "niederlagen": 1,
+          "punkte": "2:2",
+          "diff": "+1",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 8,
+          "mannschaft": "SG-BR-Treschklingen II",
+          "spiele": 2,
+          "siege": 1,
+          "niederlagen": 1,
+          "punkte": "2:2",
+          "diff": "+1",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 9,
+          "mannschaft": "TTV Eschelbronn",
+          "spiele": 2,
+          "siege": 1,
+          "niederlagen": 1,
+          "punkte": "2:2",
+          "diff": "-1",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 10,
+          "mannschaft": "TTC Landshausen",
+          "spiele": 2,
+          "siege": 1,
+          "niederlagen": 1,
+          "punkte": "2:2",
+          "diff": "-2",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 11,
+          "mannschaft": "VfB Adersbach  II",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-1",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 12,
+          "mannschaft": "TTC Siegelsbach II",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-2",
+          "eigenesTeam": true
+        },
+        {
+          "platz": 13,
+          "mannschaft": "TV Eppingen II",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-2",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 14,
+          "mannschaft": "TTF Eschelb.-Angelbachtal II",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-3",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 15,
+          "mannschaft": "TTC Gemmingen ",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-3",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 16,
+          "mannschaft": "TTC Waldangelloch II",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-3",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 17,
+          "mannschaft": "SG-Zuzenh./Hoffenheim",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-4",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 18,
+          "mannschaft": "TSV Germania Dühren",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-4",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 19,
+          "mannschaft": "TTC Schwarz-Rot Hilsbach",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-4",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 20,
+          "mannschaft": "SG-Ittlingen/Kirchardt II",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-4",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 21,
+          "mannschaft": "TTV Sulzfeld II",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-4",
+          "eigenesTeam": false
+        }
+      ]
+    },
+    {
+      "name": "III",
+      "ligaName": "Erwachsene D-Pokal",
+      "leagueSlug": "x",
+      "groupId": "499647",
+      "teamName": "TTC Siegelsbach III",
+      "myttTabelleUrl": "https://www.mytischtennis.de/click-tt/BaTTV/25--26/ligen/x/gruppe/499647/tabelle/gesamt",
+      "myttSpielplanUrl": "https://www.mytischtennis.de/click-tt/BaTTV/25--26/ligen/x/gruppe/499647/spielplan/gesamt",
+      "tabelle": [
+        {
+          "platz": 1,
+          "mannschaft": "TTV Rohrbach III",
+          "spiele": 5,
+          "siege": 5,
+          "niederlagen": 0,
+          "punkte": "10:0",
+          "diff": "+17",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 2,
+          "mannschaft": "TTC Neidenstein III",
+          "spiele": 6,
+          "siege": 5,
+          "niederlagen": 1,
+          "punkte": "10:2",
+          "diff": "+8",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 3,
+          "mannschaft": "VfB Epfenbach  II",
+          "spiele": 5,
+          "siege": 4,
+          "niederlagen": 1,
+          "punkte": "8:2",
+          "diff": "+7",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 4,
+          "mannschaft": "TTC Daisbach",
+          "spiele": 4,
+          "siege": 3,
+          "niederlagen": 1,
+          "punkte": "6:2",
+          "diff": "+7",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 5,
+          "mannschaft": "TTC Waldangelloch III",
+          "spiele": 4,
+          "siege": 3,
+          "niederlagen": 1,
+          "punkte": "6:2",
+          "diff": "+7",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 6,
+          "mannschaft": "TV Eppingen III",
+          "spiele": 4,
+          "siege": 3,
+          "niederlagen": 1,
+          "punkte": "6:2",
+          "diff": "+7",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 7,
+          "mannschaft": "VfB Epfenbach ",
+          "spiele": 3,
+          "siege": 2,
+          "niederlagen": 1,
+          "punkte": "4:2",
+          "diff": "+7",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 8,
+          "mannschaft": "TTC Tiefenbach II",
+          "spiele": 3,
+          "siege": 2,
+          "niederlagen": 1,
+          "punkte": "4:2",
+          "diff": "+5",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 9,
+          "mannschaft": "SG-Zuzenh./Hoffenheim III",
+          "spiele": 3,
+          "siege": 2,
+          "niederlagen": 1,
+          "punkte": "4:2",
+          "diff": "+3",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 10,
+          "mannschaft": "TTV Rohrbach IV",
+          "spiele": 2,
+          "siege": 1,
+          "niederlagen": 1,
+          "punkte": "2:2",
+          "diff": "+1",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 11,
+          "mannschaft": "TTC Gemmingen  III",
+          "spiele": 2,
+          "siege": 1,
+          "niederlagen": 1,
+          "punkte": "2:2",
+          "diff": "+1",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 12,
+          "mannschaft": "TTC Tiefenbach",
+          "spiele": 2,
+          "siege": 1,
+          "niederlagen": 1,
+          "punkte": "2:2",
+          "diff": "+1",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 13,
+          "mannschaft": "SG-BR-Treschklingen III",
+          "spiele": 2,
+          "siege": 1,
+          "niederlagen": 1,
+          "punkte": "2:2",
+          "diff": "+1",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 14,
+          "mannschaft": "TTV Sulzfeld IV",
+          "spiele": 2,
+          "siege": 1,
+          "niederlagen": 1,
+          "punkte": "2:2",
+          "diff": "0",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 15,
+          "mannschaft": "SG-Zuzenh./Hoffenheim II",
+          "spiele": 2,
+          "siege": 1,
+          "niederlagen": 1,
+          "punkte": "2:2",
+          "diff": "0",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 16,
+          "mannschaft": "VfB Adersbach  III",
+          "spiele": 2,
+          "siege": 1,
+          "niederlagen": 1,
+          "punkte": "2:2",
+          "diff": "0",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 17,
+          "mannschaft": "TTC Haag  II",
+          "spiele": 2,
+          "siege": 1,
+          "niederlagen": 1,
+          "punkte": "2:2",
+          "diff": "-2",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 18,
+          "mannschaft": "TTC Siegelsbach III",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-1",
+          "eigenesTeam": true
+        },
+        {
+          "platz": 19,
+          "mannschaft": "TTV Eschelbronn II",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-1",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 20,
+          "mannschaft": "TSV Germania Dühren II",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-2",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 21,
+          "mannschaft": "TTV Sulzfeld III",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-2",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 22,
+          "mannschaft": "TTC Schwarz-Rot Hilsbach III",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-3",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 23,
+          "mannschaft": "TTC Reihen IV",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-3",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 24,
+          "mannschaft": "TTC Schwarz-Rot Hilsbach II",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-3",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 25,
+          "mannschaft": "TTC Gemmingen  IV",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-3",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 26,
+          "mannschaft": "VfB Adersbach  IV",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-4",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 27,
+          "mannschaft": "SG-Ittlingen/Kirchardt III",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-4",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 28,
+          "mannschaft": "SG-BR-Treschklingen V",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-4",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 29,
+          "mannschaft": "TTV Eschelbronn III",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-4",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 30,
+          "mannschaft": "SG-BR-Treschklingen IV",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-4",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 31,
+          "mannschaft": "SG-Ittlingen/Kirchardt IV",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-4",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 32,
+          "mannschaft": "TSV Meckesheim",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-4",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 33,
+          "mannschaft": "TTC Gemmingen  II",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-4",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 34,
+          "mannschaft": "TTV Rohrbach V",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-4",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 35,
+          "mannschaft": "TTC Daisbach III",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-4",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 36,
+          "mannschaft": "SG-BR-Treschklingen VI",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-4",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 37,
+          "mannschaft": "TTF Eschelb.-Angelbachtal III",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-4",
+          "eigenesTeam": false
+        },
+        {
+          "platz": 38,
+          "mannschaft": "TTC Landshausen II",
+          "spiele": 1,
+          "siege": 0,
+          "niederlagen": 1,
+          "punkte": "0:2",
+          "diff": "-4",
+          "eigenesTeam": false
+        }
+      ]
+    }
+  ]
+}

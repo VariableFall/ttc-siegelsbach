@@ -1,0 +1,203 @@
+---
+import Base from '../layouts/Base.astro';
+import SeitenTitel from '../components/SeitenTitel.astro';
+import Karte from '../components/Karte.astro';
+import Tabelle from '../components/Tabelle.astro';
+import Hinweis from '../components/Hinweis.astro';
+
+const currentPath = Astro.url.pathname;
+
+const farben = [
+  { name: 'Rot (Akzent)', var: '--rot', hex: '#C8102E' },
+  { name: 'Rot dunkel', var: '--rot-dunkel', hex: '#9B0C23' },
+  { name: 'Tinte', var: '--tinte', hex: '#1A1A1E' },
+  { name: 'Grau', var: '--grau', hex: '#5C5C66' },
+  { name: 'Papier', var: '--papier', hex: '#F5F5F7' },
+  { name: 'Linie', var: '--linie', hex: 'rgba(0,0,0,0.06)' },
+  { name: 'Akzent VB', var: '--akzent-vb', hex: '#1D4ED8' },
+];
+
+const demoSpalten = [
+  { key: 'platz', label: 'Pl.' },
+  { key: 'team', label: 'Mannschaft' },
+  { key: 'spiele', label: 'Sp.' },
+  { key: 'punkte', label: 'Pkt.' },
+  { key: 'diff', label: 'Diff.' },
+];
+
+const demoZeilen = [
+  { platz: 1, team: 'TTC Siegelsbach I', spiele: 8, punkte: 16, diff: '+12' },
+  { platz: 2, team: 'TTV Musterstadt', spiele: 8, punkte: 14, diff: '+8' },
+  { platz: 3, team: 'SV Beispielheim', spiele: 8, punkte: 10, diff: '+2' },
+  { platz: 4, team: 'TC Nachbarort', spiele: 8, punkte: 6, diff: '-6' },
+];
+---
+
+<Base title="Styleguide" currentPath={currentPath} noindex>
+
+  <SeitenTitel
+    titel="Design-System"
+    lead="Interne Referenz für Farben, Typografie und Komponenten des TTC Siegelsbach."
+    hero
+  />
+
+  <!-- Farben -->
+  <section class="styleguide-section" aria-labelledby="sg-farben">
+    <h2 id="sg-farben" class="styleguide-section__titel">Farben</h2>
+    <p class="styleguide-section__beschreibung">
+      Vereinsrot nur als Akzent – Flächen bleiben hell (Papier, Weiß). Kontrast mindestens AA.
+    </p>
+    <div class="farben-grid">
+      {farben.map((farbe) => (
+        <div class="farbe">
+          <div class="farbe__probe" style={`background-color: var(${farbe.var})`}></div>
+          <div class="farbe__info">
+            <span class="farbe__name">{farbe.name}</span>
+            <span class="farbe__wert">{farbe.var}</span>
+            <span class="farbe__wert">{farbe.hex}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Typografie -->
+  <section class="styleguide-section" aria-labelledby="sg-typo">
+    <h2 id="sg-typo" class="styleguide-section__titel">Typografie</h2>
+    <p class="styleguide-section__beschreibung">
+      Archivo Black für Headlines (eng gesetzt), Inter für Fließtext.
+    </p>
+
+    <div class="typo-beispiel">
+      <p class="typo-beispiel__label">Display LG · Hero</p>
+      <p style="font-family: var(--font-display); font-weight: 900; font-size: var(--text-display-lg); letter-spacing: var(--tracking-display); line-height: var(--leading-tight); margin: 0;">
+        TTC Siegelsbach
+      </p>
+    </div>
+
+    <div class="typo-beispiel">
+      <p class="typo-beispiel__label">Display MD · Seitentitel</p>
+      <p style="font-family: var(--font-display); font-weight: 900; font-size: var(--text-display-md); letter-spacing: var(--tracking-display); line-height: var(--leading-tight); margin: 0;">
+        Mannschaften
+      </p>
+    </div>
+
+    <div class="typo-beispiel">
+      <p class="typo-beispiel__label">Fließtext · Inter</p>
+      <p style="font-size: var(--text-base); color: var(--tinte); margin: 0;">
+        Der TTC Siegelsbach spielt im BATTV und bietet Training für alle Altersklassen.
+        Interessierte sind herzlich willkommen.
+      </p>
+    </div>
+
+    <div class="typo-beispiel">
+      <p class="typo-beispiel__label">Lead · Sekundär</p>
+      <p style="font-size: var(--text-lg); color: var(--grau); line-height: var(--leading-relaxed); margin: 0;">
+        Tabellen und Spielpläne werden automatisch aus Vereinsdaten geladen.
+      </p>
+    </div>
+  </section>
+
+  <!-- Belag-Balken -->
+  <section class="styleguide-section" aria-labelledby="sg-belag">
+    <h2 id="sg-belag" class="styleguide-section__titel">Belag-Balken</h2>
+    <p class="styleguide-section__beschreibung">
+      Flacher roter Balken als wiederkehrendes Signatur-Element – Navigation, Karten, Hero.
+    </p>
+
+    <div class="belag-demo">
+      <div class="belag-demo__item">
+        <p class="belag-demo__label">Hero-Akzent</p>
+        <span class="belag-balken" style="width: 4rem;"></span>
+      </div>
+
+      <div class="belag-demo__item">
+        <p class="belag-demo__label">Aktive Navigation (simuliert)</p>
+        <span style="display: inline-block; padding: var(--space-2) var(--space-4); font-weight: 500; font-size: var(--text-sm); color: var(--tinte); background: rgba(0,0,0,0.06); border-radius: var(--radius-full); position: relative;">
+          Mannschaften
+          <span style="position: absolute; bottom: 0.125rem; left: 50%; transform: translateX(-50%); width: 1rem; height: var(--belag-hoehe); background: var(--akzent); border-radius: var(--radius-full);"></span>
+        </span>
+      </div>
+
+      <div class="belag-demo__item">
+        <p class="belag-demo__label">Inline-Unterstreichung (Seitentitel)</p>
+        <span class="belag-balken belag-balken--inline" style="font-family: var(--font-display); font-weight: 900; font-size: var(--text-display-sm);">
+          Über uns
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SeitenTitel -->
+  <section class="styleguide-section" aria-labelledby="sg-seitentitel">
+    <h2 id="sg-seitentitel" class="styleguide-section__titel">SeitenTitel</h2>
+    <SeitenTitel titel="Standard-Titel" lead="Mit Lead-Text und Belag-Unterstreichung im h1." />
+  </section>
+
+  <!-- Karte -->
+  <section class="styleguide-section" aria-labelledby="sg-karte">
+    <h2 id="sg-karte" class="styleguide-section__titel">Karte</h2>
+    <div class="karten-grid">
+      <Karte titel="Training Montag">
+        <p>Jugendtraining ab 17:00 Uhr in der Sporthalle Siegelsbach.</p>
+      </Karte>
+      <Karte titel="Kontakt">
+        <p>Fragen? Schreibt uns über das Kontaktformular – folgt in Phase 4.</p>
+      </Karte>
+    </div>
+  </section>
+
+  <!-- Tabelle -->
+  <section class="styleguide-section" aria-labelledby="sg-tabelle">
+    <h2 id="sg-tabelle" class="styleguide-section__titel">Tabelle</h2>
+    <p class="styleguide-section__beschreibung">
+      Auf schmalen Viewports horizontal scrollbar – Schatten-Hinweis rechts.
+    </p>
+    <Hinweis variant="demo">
+      Beispieldaten – Saison 26/27 startet im September
+    </Hinweis>
+    <Tabelle
+      caption="Kreisliga – Tabelle"
+      spalten={demoSpalten}
+      zeilen={demoZeilen}
+      stand="10.06.2026"
+    />
+  </section>
+
+  <!-- Hinweis -->
+  <section class="styleguide-section" aria-labelledby="sg-hinweis">
+    <h2 id="sg-hinweis" class="styleguide-section__titel">Hinweis</h2>
+    <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+      <Hinweis variant="info">
+        Allgemeiner Hinweis mit Belag-Akzent am linken Rand.
+      </Hinweis>
+      <Hinweis variant="demo">
+        Beispieldaten – Saison 26/27 startet im September
+      </Hinweis>
+    </div>
+  </section>
+
+  <!-- Fokus -->
+  <section class="styleguide-section" aria-labelledby="sg-fokus">
+    <h2 id="sg-fokus" class="styleguide-section__titel">Fokus-Zustände</h2>
+    <p class="styleguide-section__beschreibung">
+      Mit Tab-Taste durch die Elemente navigieren – sichtbarer Fokus-Ring in Akzentfarbe.
+    </p>
+    <div class="fokus-demo">
+      <button type="button" class="fokus-demo__btn">Button</button>
+      <a href="#" class="fokus-demo__link">Link mit Unterstreichung</a>
+      <a href="#" class="site-nav__link" style="display: inline-block;">Nav-Link</a>
+    </div>
+  </section>
+
+  <!-- Volleyball-Theme -->
+  <section class="styleguide-section theme-volleyball" aria-labelledby="sg-vb">
+    <h2 id="sg-vb" class="styleguide-section__titel">Volleyball-Theme</h2>
+    <p class="styleguide-section__beschreibung">
+      Blauer Akzent statt Rot – gleiche Komponenten, andere CSS-Variable.
+    </p>
+    <Karte titel="Volleyball-Abteilung">
+      <p>Training donnerstags – Details folgen auf der Volleyball-Unterseite.</p>
+    </Karte>
+  </section>
+</Base>
