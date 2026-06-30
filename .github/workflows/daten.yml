@@ -1,11 +1,19 @@
 name: Daten aktualisieren
 
-# Cron vorübergehend aus – Saisonpause, weniger Action-Mails.
-# Wieder aktivieren: schedule-Block unten einkommentieren (Mo/So 06:00 & 22:00 UTC).
+# ── PAUSIERT (unbestimmt) ────────────────────────────────────────────────
+# Kein automatischer und kein manueller Abruf von mytischtennis.de.
+# Die Website nutzt weiterhin die zuletzt eingecheckten JSON-Dateien.
+#
+# Reaktivieren, wenn du wieder live ziehen willst:
+#   1. `if: false` am Job unten entfernen
+#   2. schedule-Block einkommentieren (für Automatik, optional)
+#   3. In deploy.yml den workflow_run-Trigger wieder einkommentieren
+# ─────────────────────────────────────────────────────────────────────────
+
 on:
+  workflow_dispatch:
   # schedule:
   #   - cron: '0 6,22 * * *'
-  workflow_dispatch:
 
 permissions:
   contents: write
@@ -16,6 +24,7 @@ concurrency:
 
 jobs:
   fetch:
+    if: false
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

@@ -4,10 +4,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  workflow_run:
-    workflows: ['Daten aktualisieren']
-    types: [completed]
-    branches: [main]
+  # workflow_run:  # wieder einkommentieren, wenn daten.yml reaktiviert ist
+  #   workflows: ['Daten aktualisieren']
+  #   types: [completed]
+  #   branches: [main]
 
 # peaceiris/actions-gh-pages braucht Schreibrechte auf den gh-pages-Branch
 permissions:
